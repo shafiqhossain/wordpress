@@ -1,0 +1,724 @@
+<script>
+	try {
+		const intervalId = setInterval(() => {
+		  const form = document.forms['gravityApplyJob'];
+		  if (form) {
+			form.submit();
+			clearInterval(intervalId);
+		  }
+		}, 100);
+	} catch (error) {
+	  console.error(error);
+	}
+  </script>
+
+
+
+
+
+  <style>
+	/* Imported fonts */
+	@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;400;600;700&display=swap');
+
+	/* Main Body Text */
+	#gnewtonCareerBody * {
+	  color: #004FBD ;
+	  font-family: 'Open Sans', sans-serif !Important;
+	  font-size: 20px;
+	  line-height: 31px;
+	}
+
+	/* Header Text, Department, etc. */
+	.gnewtonCareerGroupHeaderClass {
+	  color: #454d54 !important;
+	  font-family: 'Open Sans', sans-serif !important;
+	  font-size: 22px !important;
+	  line-height: 32px !important;
+	  font-weight: 700;
+	}
+
+	/* Link Styling */
+	#gnewtonCareerBody a,
+	#gnewtonLandingArea a,
+	div#backToCareerHome a,
+	#gnewtonLogo a.newton_policy {
+	  color: #252b31;
+	  text-decoration: underline;
+	  text-decoration-color: #14b8e5;
+	}
+
+	/*Link when hovered*/
+	#gnewtonCareerBody a:hover,
+	#gnewtonLandingArea a:hover,
+	div#backToCareerHome a:hover {
+	  color: #14b8e5;
+	  text-decoration: underline;
+	}
+
+	/* Button Styling */
+	#gnewtonCareerBody div.gnewtonBlueBtn {
+	  background-color: #004FBD !important;
+	  color: #ffffff !important;
+	  font-family: 'Open Sans', sans-serif !important;
+	  text-align: center !important;
+	  border-radius: 0px !important;
+	}
+
+	div.gnewtonContinueBtn {
+	  background-color: #14b8e5 !important;
+	  color: #ffffff !important;
+	  font-family: 'Open Sans', sans-serif !important;
+	  text-align: center !important;
+	  border-radius: 0px !important;
+
+	}
+
+
+	/* Button When Hovered */
+	#gnewtonCareerBody div.gnewtonBlueBtn:hover,
+
+	div.gnewtonContinueBtn:hover {
+	  background-color: #14b8e5 !important;
+	  color: #ffffff !important;
+	  opacity: 0.8 !important;
+	}
+
+
+	/* Submit Button Color HOVER ONLY */
+	span#submitText:hover {
+	  color: #ffffff !important;
+	}
+
+	/* Fix search button text alignment. */
+	div#gnewtonSearchBtn {
+	  height: !important;
+	  line-height: 18px;
+	}
+
+	/* Landing Page */
+	div#gnewtonLandingArea {
+	  color: ;
+	  font-family: !Important;
+	  font-size: ;
+	  line-height: ;
+	}
+
+	/*(Open Positions Style in Landing Area" */
+	p#land {
+	  font-size: 26px !important;
+	  margin-top: 6%;
+	  margin-bottom: 2%;
+	  font-weight: 600;
+	  color: #2b2b2b;
+	}
+
+	/* Less Common Styling */
+
+	/* Remove jobid location etc from the job description page. */
+
+	#gnewtonJobDescription #gnewtonJobPosition,
+	#gnewtonJobDescription #gnewtonJobLocation,
+	#gnewtonJobDescription #gnewtonJobID,
+	#gnewtonJobDescription #gnewtonJobOpening,
+	#gnewtonJobDescription hr,
+	td#gnewtonJobLocationInfo {
+	  display: none;
+	}
+
+	/* Remove application code box for returning applicants to online form. */
+	#gnewtonApplicationBox * {
+	  display: none;
+	}
+
+	/* Remove incorrect veteran status boxes on bottom of online application form. */
+	#veteran31,
+	#veteran32,
+	#veteran33,
+	#veteran34 {
+	  margin-left: 40px;
+	}
+
+	/* Make sure that images and labels display properly. */
+	label {
+	  display: inline;
+	}
+
+	img {
+	  display: inline;
+	}
+
+	/* Increased spacing for generic resume submission. */
+	#gnewtonGeneric td {
+	  padding-top: 20px !important;
+	}
+
+	/* Fix uploaded resume blue box. */
+	#resumeDropped div.bar {
+	  padding-bottom: ;
+	}
+
+	/* Fix the Clear All Fields link. Set width to 100 or 115px if wrapping occurs. */
+	.button.newtonStoreReset.block {
+	  color: rgb(52, 152, 219) !important;
+	  background-color: rgba(0, 0, 0, 0);
+	  width: px;
+	}
+
+	.button.newtonStoreReset.block:hover {
+	  color: rgb(136, 189, 229) !important;
+	}
+
+	/* Fix Job Search Buttons */
+	select#gnewtonLocation,
+	select#gnewtonDepartment {
+	  width: 100%;
+	}
+
+	/* Fix Choose a File link. */
+	label#resumeDropLocalFile {
+	  color: #3498db;
+	}
+
+	/* Fix filename in uploaded resume blue box. */
+	#resumeDropped span.filename {
+	  color: white;
+	}
+
+	/* Hide department and location sort labels */
+	.gnewtonSortByJob {
+	  display: none !important;
+	}
+
+	.gnewtonSortByLocationOrDepartment {
+	  display: none !important;
+	}
+
+	/* Fix remove link in uploaded resume blue box. */
+	#resumeDropped .bar .closeBtn {
+	  color: #aed6f1 !important;
+	  text-decoration: none;
+	}
+
+	/* Bold section titles. */
+	dt.gnewtonSectionTitleClass {
+	  font-weight: bold;
+	}
+
+	/* Bold all p inside the application. */
+	#gnewtonResumeFormTable p {
+	  font-size: !important;
+	  font-weight: bold;
+	}
+
+	/* Un-bold the Applicant's Statement section. */
+	#gnewtonAppState p {
+	  font-weight: normal;
+	}
+
+	/* Reposition the "Yes" and "No" inside the Min Qual buttons. */
+	td.gnewtonQuestions div {
+	  line-height: 25px !important;
+	  color: !important;
+	}
+
+	/* Fix colors on attachment upload links. */
+	label.emptyFileInput {
+	  color: #3498db !important;
+	}
+
+	label.emptyFileInput:hover {
+	  color: #88bde5 !important;
+	}
+
+	/* Bold uploaded attachment names. */
+	div.filledFileInput span {
+	  font-weight: bold;
+	}
+
+	#gnewtonCareerBody div.gnewtonBlueBtn.disabled,
+	div#saveBtn.disabled,
+	#gnewtonCareerBody button.gnewtonBlueBtn.disabled,
+	#gnewtonCareerBody div.gnewtonBlueBtn[disabled],
+	#gnewtonCareerBody button.gnewtonBlueBtn[disabled] {
+	  background: #ccd3d8 !important;
+	}
+
+	/* Adjust Indeed button colors to match. */
+	#gnewtonCareerBody #gnewtonJobDescriptionBtn>div>.indeed-apply-widget>a {
+	  background: #3498DB !important;
+	}
+
+
+
+	/* hover */
+	#gnewtonCareerBody #gnewtonJobDescriptionBtn>div>.indeed-apply-widget#indeed-apply-widget>a:hover {
+	  background: !important;
+	}
+
+	/* once candidate has applied*/
+	#gnewtonCareerBody #gnewtonJobDescriptionBtn>div>.indeed-apply-widget.indeed-apply-status-applied>a {
+	  background: !important;
+	}
+
+	#gnewtonCareerBody #gnewtonJobDescriptionBtn>div>.indeed-apply-widget.indeed-apply-status-applied>a>span.indeed-apply-button-inner {
+	  color: !important;
+	}
+
+	#gnewtonCareerBody #gnewtonJobDescriptionBtn>div>.indeed-apply-widget.indeed-apply-status-applied#indeed-apply-widget>a:hover {
+	  background: #88bde5 !important;
+	}
+
+	/*Remove Department and Location sort options */
+	.gnewtonSortByJob {}
+
+	/* Adjust vertical alignment on EEO VEVRAA options. */
+	form#gnewton-vevraa-form span.radio-label {
+	  top: 0px !important;
+	  position: relative;
+	}
+
+	div#gnewtonCareerBody {
+	  margin: auto !important;
+	}
+
+	input[type="checkbox"] {
+	  padding: 5px;
+	}
+
+	/* Custom CSS Below */
+
+
+
+
+
+	/*STYLING FOR MOBILE EXPERIENCE */
+
+	@media only screen and (max-width: 500px) {
+
+	  table.gnewtonJobFilter tr,
+	  tbody,
+	  td {
+		display: block;
+	  }
+
+	  input#gnewtonKeyword {
+		margin-bottom: 5px !important;
+	  }
+
+	  .gnewtonCareerGroupRowClass {
+		word-wrap: break-word !important;
+		white-space: normal !important;
+	  }
+
+	  .gnewtonJobLink a,
+	  .gnewtonJobLink a:visited,
+	  .gnewtonJobNode a,
+	  .gnewtonJobNode a:visited,
+	  .gnewtonNode a,
+	  .gnewtonNode a:visited,
+	  .gnewtonCareerGroupJobTitleClass a,
+	  .gnewtonCareerGroupJobTitleClass {
+		white-space: normal !important;
+	  }
+
+	  #gnewtonCareerBody * {
+		font-size: 15px !important;
+	  }
+	}
+
+
+	.gnewtonJobNode a {
+	  color: green !important;
+	}
+
+	#gnewtonJobDescriptionText h3 {
+	  color: red !important;
+	}
+
+	#gnewtonContactInfo {
+	  background-color: blue !important;
+	}
+
+
+
+  @import url("https://use.typekit.net/bgm4ldi.css");
+  body {
+	font-family: Halyard Display;
+	font-size: 18px;
+	font-weight: 400;
+	color: #004FBD;
+  }
+  div#gnewtonCareerBody {
+	margin: auto !important;
+	background: #E6EDF8;
+  }
+
+  dl dt.newtonStoreReset {display: none !important;}
+
+
+  div[ns-qa="Mobile Phone"] input,
+  .gnewtonQuestionLabelClass input,
+  div[ns-qa="Address"] input,
+  div[ns-qa="City"] input,
+  div[ns-qa="State"] select,
+  div[ns-qa="Postal Code"] input,
+  div[ns-qa="Last Name"] input,
+  div[ns-qa="Email"] input,
+  div[ns-qa="Preferred Name"] input,
+  div[ns-qa="First Name"] input,
+  .gnewtonSectionClass input,
+  .gnewtonSectionClass select,
+  .gnewtonFieldInputClass input {
+	border: 0;
+	background: none;
+	border-bottom: 1px solid #97999B;
+	border-radius: 0;
+   width: 100% !important;
+   max-width: none;
+  }
+
+
+  div[ns-qa="Mobile Phone"]  label,
+  div[ns-qa="Address"]  label,
+  div[ns-qa="City"]  label,
+  div[ns-qa="State"]  label,
+  div[ns-qa="Postal Code"] label,
+  div[ns-qa="Last Name"] label,
+  div[ns-qa="Email"] label,
+  div[ns-qa="Preferred Name"] label,
+  .gnewtonQuestionLabelClass label,
+  div[ns-qa="First Name"]  label {
+	color: #004FBD !important;
+	font-size: 1.25rem !important;
+	font-weight: 400;
+	padding-left: 0;
+  }
+
+  div[ns-qa="State"] ,
+  div[ns-qa="Postal Code"] {
+	width: calc(50% - 10px);
+  }
+
+  div[ns-qa="Mobile Phone"] ,
+  div[ns-qa="Address"] ,
+  div[ns-qa="City"] {
+	width: calc(33.33% - 14px);
+  }
+
+  div[ns-qa="Last Name"],
+  div[ns-qa="Email"],
+  div[ns-qa="Preferred Name"],
+  div[ns-qa="First Name"] {
+	width: calc(50% - 10px);
+  }
+  .gnewtonSectionClass dd {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+  }
+  #gnewtonContactInfo {
+	background-color: transparent !important;
+  }
+  #gnewtonContactInfo dt {
+	display: none;
+  }
+  .gnewtonQuestionLabelClass {
+	width: 100% !important;
+	max-width: none !important;
+  }
+  .gnewtonSectionClass dd {
+	width: 100% !important;
+	box-sizing: border-box;
+	padding-right: 20px;
+  }
+  .gnewtonSectionClass dd * {
+	box-sizing: border-box !important;
+  }
+
+  .gnewtonSectionClass.noBottomBorder dt.gnewtonSectionTitleClass {
+	font-weight: 400;
+	padding: 0 20px;
+	font-size: 1.25rem !important;
+	color: #004FBD !important;
+  }
+  .gnewtonSectionClass.noBottomBorder .gnewtonQuestionInputClass {
+	width: 100%;
+  }
+  .gnewtonSectionClass.noBottomBorder .gnewtonQuestionInputClass textarea {
+	height: 125px !important;
+	background: none;
+	border: 0;
+	border-bottom: 1px solid #97999B;
+	border-radius: 0;
+  }
+
+  #gnewtonLogo,
+  #gnewtonJobPosition,
+  #gnewtonLogo,
+  #gnewtonBackToHome,
+  #gnewtonJobDescriptionText {
+	display: none !important;
+  }
+
+  div#gnewtonCareerBody {
+	background: unset !important;
+  }
+
+  #gnewtonResumeFormTitle {
+	display: block !important;
+	font-size: 2.5rem;
+	font-weight: 400;
+	color: #004FBD;
+	margin-bottom: 60px;
+	padding: 0 20px;
+  }
+
+  #gnewtonHelpTextOfSubmission {
+	display: none;
+  }
+  #gnewtonCareerBody .dashed {
+	display: none;
+  }
+  .gnewtonSubmitResume,
+  .formBuilderBody form {
+	max-width: 54rem !important;
+	margin: auto;
+  }
+  body {
+	margin: 0 !important;
+	font-size: 1.065vw !important;
+  }
+
+  body #gnewtonCareerBody {
+	max-width: 100% !important;
+	width: 100%;
+	/* background: #E6EDF8 !important;
+	padding: 12.5rem 0; */
+  }
+
+  div[ns-qa="Mobile Phone"] .gnewtonStar,
+  div[ns-qa="Address"] .gnewtonStar,
+  div[ns-qa="City"] .gnewtonStar,
+  div[ns-qa="State"] .gnewtonStar,
+  div[ns-qa="Postal Code"] .gnewtonStar,
+  div[ns-qa="Last Name"] .gnewtonStar,
+  div[ns-qa="Email"] .gnewtonStar,
+  div[ns-qa="Preferred Name"] .gnewtonStar,
+  .gnewtonQuestionLabelClass .gnewtonStar,
+  div[ns-qa="First Name"] .gnewtonStar {
+	display: none;
+  }
+
+  div.formBuilderBody .gnewtonFieldInputClass input,
+  div.formBuilderBody .gnewtonQuestionInputClass input {
+	height: 2rem !important;
+  }
+
+  div[ns-qa="State"] select {
+	color: #004FBD !important;
+  }
+  #uploadResume dt .gnewtonStar {
+	display: none;
+  }
+
+  #uploadResume dt {
+	font-size: 1.25rem;
+	color: #004FBD;
+	padding: 0 20px;
+	font-weight: 400;
+  }
+
+  #saveBtnBox {
+	padding: 0 20px;
+  }
+
+
+  #gnewtonCareerBody div.gnewtonBlueBtn:hover,
+  #gnewtonCareerBody div.gnewtonBlueBtn,
+  .ia-btn-div:hover,
+  .ia-btn-div ,
+  body #gnewtonCareerBody button.gnewtonBlueBtn:hover,
+  body #gnewtonCareerBody button.gnewtonBlueBtn {
+	background-color: transparent !important;
+	color: #004FBD !important;
+	font-family: 'Open Sans', sans-serif !important;
+	text-align: center !important;
+	border-radius: 0px !important;
+	padding: 0;
+	position: relative;
+	font-size: 1.25rem !important;
+	font-style: italic;
+	padding: 0 !important;
+	border: 0 !important;
+	color: #004FBD !important;
+	font-weight: 400 !important;
+	opacity: 1 !important;
+  }
+
+  #gnewtonJobDescriptionBtn > div > .indeed-apply-widget > div:after,
+  #gnewtonCareerBody div.gnewtonBlueBtn:after,
+  .ia-btn-div :after,
+  #gnewtonCareerBody button.gnewtonBlueBtn::after {
+	content: "";
+	background-image: url("data:image/svg+xml,%3Csvg width='8' height='24' viewBox='0 0 8 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 18.0072L6.18055 13.484L0 8.99255V7L8 12.9147V14.085L0 20V18.0072Z' fill='%23004FBD'%3E%3C/path%3E%3C/svg%3E");
+	position: absolute;
+	right: -20px;
+	top: 0;
+	height: 24px;
+	width: 8px;
+  }
+  body #gnewtonJobDescriptionBtn > div > .indeed-apply-widget > div {
+	position: relative;
+  }
+  body #gnewtonJobDescriptionBtn > div > .indeed-apply-widget > div,
+  #gnewtonCareerBody a, #gnewtonLandingArea a, div#backToCareerHome a, #gnewtonLogo a.newton_policy {
+	color: #004FBD !important;
+	text-decoration-color: #004FBD;
+  }
+
+  #uploadResume div {
+	width: 100%;
+	max-width: none;
+  }
+  body #resumeDrop.required {
+	border-color: #004FBD;
+  }
+
+  body #resumeDrop .remoteFiles span,
+  body #resumeDrop label#resumeDropLocalFile {
+	color: #004fbd;
+  }
+
+  #gnewtonPrivacyPolicyInfo input {
+	height: 20px !important;
+	padding: 0;
+	border: 1px solid #004FBD;
+	width: 20px !important;
+	background-position: 2px 0px;
+	background-size: 15px;
+  }
+
+  #gnewtonPrivacyPolicyInfo input:checked {
+	outline: none;
+	box-shadow: none;
+  }
+
+  span#submitText:hover {
+	color: #004FBD !important;
+  }
+
+  #gnewtonPrivacyPolicyInfo label,
+  #gnewtonPrivacyPolicyInfo dt {
+	font-weight: 500;
+	opacity: 600;
+	font-size: 1.125rem !important;
+  }
+  #highlight {
+	max-width: 47rem;
+	margin: 0 auto;
+  }
+
+  #highlight table {
+	width: 100%;
+  }
+
+  .gnewtonFieldLabelClass [for="firstName"], .gnewtonFieldLabelClass [for="lastName"], .gnewtonFieldLabelClass [for="email"], .gnewtonFieldLabelClass [for="mobile"], .gnewtonFieldLabelClass [for="city"], .gnewtonFieldLabelClass [for="state"], .gnewtonFieldLabelClass [for="zipCode"], .gnewtonFieldLabelClass [for="phone"], .gnewtonFieldLabelClass [for="country"], .gnewtonFieldLabelClass [for="country"], .gnewtonFieldLabelClass [for="address1"], .gnewtonFieldLabelClass [for=""] {
+	padding-left: 0;
+  }
+  #gnewtonJobDescriptionBtn .gnewtonBlueBtn + div {
+	  display: none;
+  }
+
+
+  #gnewton_section_50 .gnewtonQuestionInputClass {
+	max-width: 100%;
+  }
+
+  #gnewton_section_60 input, #gnewton_section_60 dd > div, #gnewton_section_60 .gnewtonQuestionInputClass {
+	max-width: 100%;
+	width: 100%;
+  }
+
+  #gnewton_section_70 input, #gnewton_section_70 dd > div, #gnewton_section_70 .gnewtonQuestionInputClass {
+	max-width: 100%;
+	width: 100%;
+  }
+  #gnewton_section_100 input, #gnewton_section_100 dd > div, #gnewton_section_100 .gnewtonQuestionInputClass {
+	max-width: 100%;
+	width: 100%;
+  }
+
+  #gnewton_section_40 * {
+	width: 100%;
+	max-width: 100%;
+  }
+  #gnewton_section_80, #gnewton_section_90 {
+	width: 50%;
+	float: left;
+  }
+  #gnewton_section_50 *,
+  #gnewton_section_80 *, #gnewton_section_90 *{
+	width: 100%;
+	float: left;
+  }
+
+
+  @media(max-width: 767px) {
+  #uploadResume {
+	margin-bottom: 20px;
+  }
+	#gnewtonCareerBody * {
+	  font-size: 20px !important;
+	}
+	#gnewtonJobDescription {
+	   padding: 0 20px;
+	}
+	#gnewtonJobDescriptionBtn {text-align: left;}
+	body #gnewtonCareerBody {
+	  padding: 6rem 0;
+	}
+
+  .gnewtonSectionClass.noBottomBorder dt.gnewtonSectionTitleClass,
+	#gnewtonResumeFormTitle,
+	#uploadResume dt {
+	 padding: 0;
+  }
+  .gnewtonSubmitResume {
+	padding: 0 20px;
+  }
+  div[ns-qa="State"], div[ns-qa="Postal Code"],
+  div[ns-qa="Last Name"], div[ns-qa="Email"], div[ns-qa="Preferred Name"], div[ns-qa="First Name"] {
+	width: 100%;
+  }
+  div[ns-qa="Mobile Phone"], div[ns-qa="Address"], div[ns-qa="City"] {
+	width: calc(33.33% - 14px);
+  }
+
+  .gnewtonSectionClass.noBottomBorder dt.gnewtonSectionTitleClass ,
+	#uploadResume dt ,
+  #gnewtonCareerBody div.gnewtonBlueBtn:hover,
+  #gnewtonCareerBody div.gnewtonBlueBtn,
+  .ia-btn-div:hover,
+  .ia-btn-div ,
+  body #gnewtonCareerBody button.gnewtonBlueBtn:hover,
+  body #gnewtonCareerBody button.gnewtonBlueBtn ,
+  div[ns-qa="Mobile Phone"]  label,
+  div[ns-qa="Address"]  label,
+  div[ns-qa="City"]  label,
+  div[ns-qa="State"]  label,
+  div[ns-qa="Postal Code"] label,
+  div[ns-qa="Last Name"] label,
+  div[ns-qa="Email"] label,
+  div[ns-qa="Preferred Name"] label,
+  .gnewtonQuestionLabelClass label,
+  div[ns-qa="First Name"]  label {
+	font-size: 1.125rem;
+  }
+  }
+
+  @media(max-width: 500px) {
+	#gnewtonCareerBody * {
+	  font-size: 18px !important;
+	}
+  }
+  </style>
