@@ -1,5 +1,5 @@
 <?php
-function __smma_hero_contact_details() {
+function __cmma_hero_contact_details() {
 	ob_start();
 	$name         = get_field( 'contact_details_contact_name' );
 	$title        = get_field( 'contact_details_title' );
@@ -18,7 +18,7 @@ function __smma_hero_contact_details() {
 
 	if ( ! empty( $contact_info ) || ! empty( $email ) || ! empty( $phone ) ) :
 		?>
-		<div class="smma-contact-details ">
+		<div class="cmma-contact-details ">
 			<h5>Questions? Contact:</h5>
 			<div class="contact-info"><?= $contact_info; ?></div>
 			<?php if ( $email ) : ?><a href="mailto:<?= $email; ?>">Email</a><?php endif; ?>
@@ -29,4 +29,4 @@ function __smma_hero_contact_details() {
 
 	return ob_get_clean();
 }
-add_shortcode( 'smma_hero_contact_details', '__smma_hero_contact_details' );
+add_shortcode( 'cmma_hero_contact_details', '__cmma_hero_contact_details' );

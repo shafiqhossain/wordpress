@@ -1,0 +1,148 @@
+@import '../../../../css/common.scss';
+
+.single-video {
+	.single-video-element {
+		@include responsive(lg, true) {
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
+	&-inner {
+		max-width: 75rem;
+	}
+	.panel-asset {
+		&:after {
+			display: none;
+		}
+	}
+	&-content {
+		max-width: 42rem;
+	}
+
+	&.content-placement {
+		&-left {
+			.single-video-inner {
+				max-width: 52rem;
+			}
+		}
+		&-right {
+			.single-video-inner {
+				max-width: 52rem;
+			}
+		}
+	}
+
+    iframe {
+		// width: 300%;
+		// margin-left: -100%;
+		// max-width: none;
+		// float: left;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		height: 200%;
+		width: 300%;
+		object-fit: cover;
+		object-position: center;
+		transform: translate(-50%, -50%) scale(1.01);
+		margin: 0;
+
+	}
+
+	.cmma-video-embed::before {
+		padding-bottom: 56.25%;
+	}
+	#cmma-video-embed-audio {
+		position: absolute;
+		right: 20px;
+		bottom: 10px;
+
+		span {
+			cursor: pointer;
+		}
+		svg {
+			width: 40px;
+			height: 40px;
+			path {
+				fill: #fff;
+			}
+		}
+	}
+
+	.control-icon {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50% , -50%);
+		height: 70px;
+		width: 70px;
+		z-index: 9;
+		opacity: 0.7;
+		@include responsive(md, true) {
+			height: 40px;
+			width: 40px;
+		}
+		.play {
+			cursor: pointer;
+			span {
+				display: block;
+				border-left: 70px solid #fff;
+				border-top: 45px solid rgba(0,0,0,0);
+				border-bottom: 45px solid rgba(0,0,0,0);
+				margin: 0;
+				@include responsive(md, true) {
+					border-left: 40px solid #fff;
+					border-top: 25px solid rgba(0,0,0,0);
+					border-bottom: 25px solid rgba(0,0,0,0);
+				}
+			}
+		}
+		.pause {
+			cursor: pointer;
+			display: none;
+			gap: 20px;
+			justify-content: center;
+			align-items: center;
+			@include responsive(md, true) {
+				gap: 12px;
+			}
+			span {
+				height: 70px;
+				width: 10px;
+				display: inline-block;
+				background-color: #fff;
+				@include responsive(md, true) {
+					height: 40px;
+				}
+			}
+		}
+		&.active {
+			.play {
+				display: none;
+			}
+			.pause {
+				display: flex;
+				opacity: 0;
+				pointer-events: none;
+			}
+		}
+
+
+	}
+}
+
+.cmma-video-embed:hover {
+	.control-icon {
+		.pause {
+			opacity: 1;
+			pointer-events: inherit;
+		}
+	}
+}
+.panel-wrapper {
+	.single-video {
+		&-inner {
+			max-width: 75rem;
+		}
+	}
+}

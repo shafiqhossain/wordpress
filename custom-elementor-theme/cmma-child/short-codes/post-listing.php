@@ -2,7 +2,7 @@
 
 // Fetch jobs data from BambooHR API
 function getJobsData($apikey = '31cf1ba37d2c1f5351f10c5c8010f28bea43e6f7') {
-  $api_url = "https://{$apikey}:x@api.bamboohr.com/api/gateway.php/smma/v1/applicant_tracking/jobs?statusGroups=Open&sortBy=count&sortOrder=ASC";
+  $api_url = "https://{$apikey}:x@api.bamboohr.com/api/gateway.php/cmma/v1/applicant_tracking/jobs?statusGroups=Open&sortBy=count&sortOrder=ASC";
   $ch = curl_init();
 
   curl_setopt($ch, CURLOPT_URL, $api_url);
@@ -32,16 +32,16 @@ function renderJobListings() {
 
 	$jobs_data = groupJobsByDepartment(getJobsData());
 	if ($jobs_data) { ?>
-		<div class="smma-container">
+		<div class="cmma-container">
 			<div class="panel-wrapper">
-				<div class="smma-listing">
+				<div class="cmma-listing">
 					<?php foreach ($jobs_data as $department => $jobs) { ?>
-						<div class="smma-listing-category">
+						<div class="cmma-listing-category">
 							<?php if(count($jobs_data) > 1) { ?>
-								<div class="smma-listing-name"><?= htmlspecialchars($department); ?></div>
+								<div class="cmma-listing-name"><?= htmlspecialchars($department); ?></div>
 							<?php } ?>
 							<?php foreach ($jobs as $job) { ?>
-								<div class="smma-listing-item">
+								<div class="cmma-listing-item">
 									<h3><a href="<?= $job['postingUrl']; ?>" target="_blank"><?= htmlspecialchars($job['title']['label']); ?></a></h3>
 									<p><?= htmlspecialchars($job['location']['label']); ?></p>
 								</div>
@@ -55,4 +55,4 @@ function renderJobListings() {
 
   return ob_get_clean();
 }
-add_shortcode('smma_post_listing', 'renderJobListings');
+add_shortcode('cmma_post_listing', 'renderJobListings');

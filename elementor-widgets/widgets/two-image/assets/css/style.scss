@@ -1,0 +1,20 @@
+@import '../../../../css/config.scss';
+
+.panel-wrapper {
+	@include responsive(lg) {
+		&.panel-two-image-wrapper {
+
+			&.content-position-bottom {
+				align-items: flex-end;
+			}
+
+			&.content-position-top {
+				align-items: flex-start;
+			}
+
+			&.content-position-center {
+				align-items: center;
+			}
+		}
+	}
+}

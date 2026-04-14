@@ -1,0 +1,47 @@
+@import '../../../../css/common.scss';
+
+.social-panel {
+	padding-top: 50px;
+	padding-bottom: 30px;
+
+	@include responsive(md) {
+		padding-top: 100px;
+		padding-bottom: 70px;
+	}
+
+	h2 {
+		max-width: 700px;
+	}
+
+	p {
+		max-width: 700px;
+	}
+
+	.panel-wrapper-inner {
+		width: 100%;
+	}
+
+	#sb_instagram {
+		#sbi_load {
+			display: none;
+		}
+	}
+}
+
+.color-scheme-dark {
+	.sbi-owl-dots {
+		.sbi-owl-dot {
+			span {
+				background-color: var(--theme-color-primary-inverse);
+				opacity: 0.5;
+			}
+
+			&.active {
+				span {
+					background-color: var(--theme-color-primary-inverse);
+					opacity: 1;
+				}
+			}
+		}
+	}
+}

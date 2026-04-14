@@ -10,7 +10,7 @@ function collectionShortCode() {?>
 		);
 		$query = new WP_Query($args);
 		?>
-		<div class="smma-collection-list">
+		<div class="cmma-collection-list">
 			<?php
 			$jump_navigation = [];
 			$members_modal_data = [];
@@ -23,15 +23,15 @@ function collectionShortCode() {?>
 						'title' => get_the_title()
 					];
 					?>
-					<div class="smma-collection" >
+					<div class="cmma-collection" >
 						<div id="post-<?php echo $post_id; ?>" class="collection-space"></div>
 						<h2><?php the_title(); ?></h2>
-						<div class="smma-collection-description">
+						<div class="cmma-collection-description">
 							<?php echo get_field('short_description'); ?>
 						</div>
-						<a href="<?= esc_url(get_permalink($post_id)); ?>" class="smma-button smma-button-type-text">
-							<span class="smma-button-text">View Collection</span>
-							<span class="smma-button-icon"><?php echo smma_elementor_icons('arrow', 'currentColor'); ?></span>
+						<a href="<?= esc_url(get_permalink($post_id)); ?>" class="cmma-button cmma-button-type-text">
+							<span class="cmma-button-text">View Collection</span>
+							<span class="cmma-button-icon"><?php echo cmma_elementor_icons('arrow', 'currentColor'); ?></span>
 						</a>
 					</div>
 					<?php
@@ -52,14 +52,14 @@ function collectionShortCode() {?>
 										$post_title = $post->post_title;
 										$sub_title = get_field('sub_title', $postID);
 										$image_id = get_post_thumbnail_id($postID);
-										$image_info = smma_elementor_widgets_get_responsive_image_data($image_id, 'full');
-										$modal_id = 'smma-modal-' . $postID;
+										$image_info = cmma_elementor_widgets_get_responsive_image_data($image_id, 'full');
+										$modal_id = 'cmma-modal-' . $postID;
 										$href = esc_url(get_permalink($post));
 										$buton_class = '';
 										$data_modal_id = '';
 										if($post_type === 'member'):
 											$href ='javascript:void(0)';
-											$buton_class =   'smma-modal-button';
+											$buton_class =   'cmma-modal-button';
 											$data_modal_id = 'data-modal-id=' . $modal_id;
 											$post_title = $post_title.', '.$sub_title;
 											$members_modal_data[$post->ID] = $post;
@@ -69,9 +69,9 @@ function collectionShortCode() {?>
 											<div class="collection-panel-slider-item" data-post-id="<?= $postID; ?>">
 												<?php if ((isset($image_info) && !empty($image_info['srcset'])) || !empty($horizontal_thumbnail)) : ?>
 													<?php if ($post_type == 'project') : ?>
-														<div class="smma-collection-img project">
+														<div class="cmma-collection-img project">
 															<a href="<?= $href; ?>" <?= $data_modal_id ?> class="<?= $buton_class; ?>" >
-																<div class="smma-collection-img-inner">
+																<div class="cmma-collection-img-inner">
 																	<img srcset="<?= esc_attr($image_info['srcset']) ?>" src="<?= esc_url($image_info['url']) ?>" loading="lazy" height="100%" width="100%" alt="" />
 																</div>
 															</a>
@@ -80,9 +80,9 @@ function collectionShortCode() {?>
 													<?php endif; ?>
 
 													<?php if ($post_type == 'perspective') : ?>
-														<div class="smma-collection-img perspective">
+														<div class="cmma-collection-img perspective">
 															<a href="<?= $href; ?>" <?= $data_modal_id ?> class="<?= $buton_class; ?>" >
-																<div class="smma-collection-img-inner">
+																<div class="cmma-collection-img-inner">
 																	<img srcset="<?= esc_attr($image_info['srcset']) ?>" src="<?= esc_url($image_info['url']) ?>" loading="lazy" height="100%" width="100%" alt="" />
 																</div>
 															</a>
@@ -91,9 +91,9 @@ function collectionShortCode() {?>
 													<?php endif; ?>
 
 													<?php if ($post_type == 'post') : ?>
-														<div class="smma-collection-img post">
+														<div class="cmma-collection-img post">
 															<a href="<?= $href; ?>" <?= $data_modal_id ?> class="<?= $buton_class; ?>" >
-																<div class="smma-collection-img-inner">
+																<div class="cmma-collection-img-inner">
 																	<img srcset="<?= esc_attr($image_info['srcset']) ?>" src="<?= esc_url($image_info['url']) ?>" loading="lazy" height="100%" width="100%" alt="" />
 																</div>
 															</a>
@@ -102,9 +102,9 @@ function collectionShortCode() {?>
 													<?php endif; ?>
 
 													<?php if ($post_type == 'member') : ?>
-														<div class="smma-collection-img member">
+														<div class="cmma-collection-img member">
 															<a href="<?= $href ?>" <?= $data_modal_id ?> class="<?= $buton_class; ?>">
-																<div class="smma-collection-img-inner">
+																<div class="cmma-collection-img-inner">
 																	<?php
 																		$landscape_image = get_field('horizontal-thumbnail', $post->ID);
 																	?>
@@ -152,12 +152,12 @@ function collectionShortCode() {?>
 							$image_id = get_post_thumbnail_id($postID);
 							$custom_fields = get_fields($postID);
 							$post_content = get_post_field('post_content', $postID);
-							$image_info = smma_elementor_widgets_get_responsive_image_data($image_id, 'full');
+							$image_info = cmma_elementor_widgets_get_responsive_image_data($image_id, 'full');
 						?>
-						<div id="smma-modal-<?= $postID ?>" class="modal widget-modal single-perspective">
-							<div class="smma-author-modal smma-modal-content color-scheme-dark">
-								<div class="smma-show-more-info">
-									<span class="smma-modal-close close" data-modal-id="smma-modal-<?= $postID ?>"><?= smma_elementor_icons('minus', 'currentColor'); ?></span>
+						<div id="cmma-modal-<?= $postID ?>" class="modal widget-modal single-perspective">
+							<div class="cmma-author-modal cmma-modal-content color-scheme-dark">
+								<div class="cmma-show-more-info">
+									<span class="cmma-modal-close close" data-modal-id="cmma-modal-<?= $postID ?>"><?= cmma_elementor_icons('minus', 'currentColor'); ?></span>
 								</div>
 								<div class="modal-head">
 									<h2><?= $custom_fields['first_name']; ?> <?= $custom_fields['last_name']; ?></h2>
@@ -198,7 +198,7 @@ function collectionShortCode() {?>
 									<?php endif; ?>
 
 									<?php if ($custom_fields['slider_image'] && count($custom_fields['slider_image'])): ?>
-										<div class="smma-people-slider <?= esc_attr($custom_fields['hide_slider'] ? 'hide' : ''); ?>">
+										<div class="cmma-people-slider <?= esc_attr($custom_fields['hide_slider'] ? 'hide' : ''); ?>">
 											<h6><?= esc_html($custom_fields['slider-title']); ?></h6>
 											<?php
 											$slick_settings = [
@@ -207,12 +207,12 @@ function collectionShortCode() {?>
 												'infinite'      => true,
 												'autoplay'      => true,
 												'autoplaySpeed' => 3000,
-												'prevArrow'     => '<a href="javascript:void(0);" class="smma-prev-btn">' . smma_elementor_icons('arrow', 'currentColor') . '</a>',
-												'nextArrow'     => '<a href="javascript:void(0);" class="smma-next-btn">' . smma_elementor_icons('arrow', 'currentColor') . '</a>',
+												'prevArrow'     => '<a href="javascript:void(0);" class="cmma-prev-btn">' . cmma_elementor_icons('arrow', 'currentColor') . '</a>',
+												'nextArrow'     => '<a href="javascript:void(0);" class="cmma-next-btn">' . cmma_elementor_icons('arrow', 'currentColor') . '</a>',
 											];
 											?>
 
-											<div class="smma-people-slider-wrapper" data-slick="<?= esc_attr(json_encode($slick_settings)); ?>">
+											<div class="cmma-people-slider-wrapper" data-slick="<?= esc_attr(json_encode($slick_settings)); ?>">
 												<?php foreach ($custom_fields['slider_image'] as $key => $image) { ?>
 													<div class="slide-item">
 														<a href="<?php the_sub_field('slider_link'); ?>" target="_blank">
@@ -235,10 +235,10 @@ function collectionShortCode() {?>
 			<?php endif; ?>
 		</div>
 
-		<div class="smma-footer-jump-navigation">
-			<div class="smma-container">
-				<div class="smma-footer-jump-navigation-wrapper">
-					<div class="smma-footer-jump-navigation-heading">Jump to</div>
+		<div class="cmma-footer-jump-navigation">
+			<div class="cmma-container">
+				<div class="cmma-footer-jump-navigation-wrapper">
+					<div class="cmma-footer-jump-navigation-heading">Jump to</div>
 					<ul>
 						<?php foreach ($jump_navigation as $navigationKey => $navigation) { ?>
 							<li data-id="<?= $navigationKey; ?>"><a href="#post-<?= $navigation['id']; ?>"><?= $navigation['title']; ?></a></li>
@@ -266,10 +266,10 @@ function collectionShortCode() {?>
 					});
 
 					// Navigation menu behavior on mouse leave
-					$j('.smma-footer-jump-navigation').on('mouseleave', function () {
+					$j('.cmma-footer-jump-navigation').on('mouseleave', function () {
 						var liHeight = $j(this).find('li').outerHeight();
 						var activeLi = $j('li.scrolled').attr('data-id');
-						$j('.smma-footer-jump-navigation ul').animate({
+						$j('.cmma-footer-jump-navigation ul').animate({
 							scrollTop: (parseInt(activeLi) * liHeight)
 						}, 0);
 					});
@@ -287,8 +287,8 @@ function collectionShortCode() {?>
 							autoplay: false,
 							loop:true,
 							autoplaySpeed: 7000,
-							prevArrow: '<button class="smma-prev-btn"><svg width="8" height="24" viewBox="0 0 8 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 18.0072L6.18055 13.484L0 8.99255V7L8 12.9147V14.085L0 20V18.0072Z" fill="currentcolor" /></svg></button>',
-							nextArrow: '<button class="smma-next-btn"><svg width="8" height="24" viewBox="0 0 8 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 18.0072L6.18055 13.484L0 8.99255V7L8 12.9147V14.085L0 20V18.0072Z" fill="currentcolor" /></svg></button>',
+							prevArrow: '<button class="cmma-prev-btn"><svg width="8" height="24" viewBox="0 0 8 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 18.0072L6.18055 13.484L0 8.99255V7L8 12.9147V14.085L0 20V18.0072Z" fill="currentcolor" /></svg></button>',
+							nextArrow: '<button class="cmma-next-btn"><svg width="8" height="24" viewBox="0 0 8 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 18.0072L6.18055 13.484L0 8.99255V7L8 12.9147V14.085L0 20V18.0072Z" fill="currentcolor" /></svg></button>',
 							responsive: [
 								{
 									breakpoint: 1440,
@@ -326,7 +326,7 @@ function collectionShortCode() {?>
 				function calculateLargeImageContentHeight(widgetClass) {
 					var $j = jQuery;
 					var $widget = $j(widgetClass);
-					var $content = $widget.find('.panel-collection .smma-collection-list');
+					var $content = $widget.find('.panel-collection .cmma-collection-list');
 
 					if ($content.length) {
 						$widget.find('.collection-panel-slider-item').css({'--large-image-content-height': $content.height() + 'px'});
@@ -334,13 +334,13 @@ function collectionShortCode() {?>
 				}
 
 				function updateProgressBar() {
-					const footerFixedLinks = document.querySelector('.smma-footer-jump-navigation');
+					const footerFixedLinks = document.querySelector('.cmma-footer-jump-navigation');
 					const totalHeight = document.body.scrollHeight - window.innerHeight;
 					const progress = (window.pageYOffset / totalHeight) * 100;
 					footerFixedLinks.style.setProperty('--progress-bar-width', progress + '%');
 
 					window.onload = function() {
-						const footerWrapper = document.querySelector('.smma-footer-jump-navigation-wrapper');
+						const footerWrapper = document.querySelector('.cmma-footer-jump-navigation-wrapper');
 						const footerLinks = footerWrapper.querySelector('ul');
 						const items = footerLinks.querySelectorAll('li');
 						if (items.length > 4) {
@@ -357,4 +357,4 @@ function collectionShortCode() {?>
 		<?php return ob_get_clean();?>
 	</div>
 <?php }
-add_shortcode('smma_collection', 'collectionShortCode');
+add_shortcode('cmma_collection', 'collectionShortCode');

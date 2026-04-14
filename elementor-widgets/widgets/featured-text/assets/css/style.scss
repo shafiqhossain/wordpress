@@ -1,0 +1,63 @@
+@import '../../../../css/config.scss';
+
+.panel-wrapper.featured-text {
+  .panel-inner {
+    max-width: 100%;
+  }
+}
+
+.featured-text {
+
+	.featured-text-inner {
+		max-width: 100%;
+
+		@include responsive(md, true) {
+			padding-bottom: 55px;
+		}
+	}
+
+	&-content {
+		display: flex;
+		align-items: flex-start;
+		padding-left: 120px;
+
+		@include responsive(lg, true) {
+			padding-left: 0;
+		}
+
+		@include responsive(md, true) {
+			flex-wrap: wrap;
+		}
+	}
+
+	&-left {
+		width: 14.6875rem;
+
+		h2 {
+			font-weight: 500;
+			padding-top: 8px;
+		}
+	}
+
+	&-description {
+		width: 100%;
+		max-width: 49.375rem;
+
+		h2 {
+			margin-bottom: 28px;
+		}
+
+		h2+h2 {
+			margin-top: 50px;
+
+			@include responsive(md, true) {
+				margin-top: 35px;
+			}
+		}
+	}
+	h2.featured-text-title {
+		font-size: 20px;
+		line-height: 24px;
+		font-weight: 500;
+	}
+}

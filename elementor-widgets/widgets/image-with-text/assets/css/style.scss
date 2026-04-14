@@ -1,0 +1,100 @@
+@import '../../../../css/config.scss';
+
+.image-with-text {
+	padding-top: 80px;
+
+	.cmma-widget {
+		background-color: var(--theme-color-accent);
+		padding-bottom: 100px;
+
+		@include responsive(xl, true) {
+			padding-bottom: 0;
+		}
+	}
+
+	.panel {
+		&-wrapper {
+			&.content-placement-right {
+				flex-direction: row-reverse;
+			}
+
+			@include responsive(md, true) {
+				flex-wrap: wrap;
+				padding-bottom: 110px;
+			}
+		}
+
+		&-image {
+			width: 49%;
+			margin-top: -180px;
+
+			@include responsive(lg, true) {
+				margin-top: -135px;
+			}
+
+			@include responsive(md, true) {
+				width: 100%;
+			}
+		}
+
+		&-text {
+			width: 51%;
+			padding-left: 145px;
+			padding-right: 145px;
+
+			@include responsive(xl, true) {
+				padding-left: 60px;
+				padding-right: 60px;
+			}
+
+			@include responsive(lg, true) {
+				padding-left: 30px;
+				padding-right: 30px;
+			}
+
+			@include responsive(md, true) {
+				width: 100%;
+				padding: 0;
+			}
+		}
+
+		&-asset {
+			margin-bottom: 0;
+
+			@include responsive(lg, true) {
+				margin: 0;
+			}
+
+			&:after {
+				display: none;
+			}
+
+			&:hover {
+				>img {
+					filter: none;
+				}
+			}
+		}
+
+		&-content {
+			padding-top: 20px;
+
+			@include responsive(md, true) {
+				padding-top: 42px;
+			}
+
+			&-title {
+				font-weight: 500;
+				margin-bottom: 40px;
+
+				@include responsive(md, true) {
+					margin-bottom: 20px;
+				}
+			}
+
+			&-tagline {
+				margin-bottom: 30px;
+			}
+		}
+	}
+}

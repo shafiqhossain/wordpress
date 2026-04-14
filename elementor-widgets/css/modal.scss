@@ -1,0 +1,144 @@
+//Change the modal name to cmma-modal after refactoring has been done.
+.widget-modal {
+	&:before {
+		content: '';
+		display: none;
+		background: rgba(228, 228, 228, 0.8);
+		position: fixed;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		z-index: 10;
+	}
+
+	.cmma-modal-content {
+		position: fixed;
+		top: 30px;
+		right: 30px;
+		margin: 0;
+		padding: 70px 80px;
+		max-width: 40rem;
+		width: 100%;
+		height: calc(100% - 60px);
+		overflow-x: hidden;
+		overflow-y: auto;
+		opacity: 0;
+		transform: translateY(200%);
+		transition: all 0.4s cubic-bezier(0, 0, 0.1, 1);
+		//transition: opacity 400ms cubic-bezier(0, 0, 0.1, 1), visibility 400ms cubic-bezier(0, 0, 0.1, 1);
+		z-index: 11;
+		font-size: 1.25rem;
+
+
+		@include responsive(md, true) {
+			width: 100%;
+			height: 100%;
+			top: 0;
+			padding: 40px 24px;
+			right: 0;
+			font-size: 1.125rem;
+		}
+
+		&.full-height {
+			height: calc(100% - 30px);
+		}
+
+		.mCSB_outside + .mCSB_scrollTools {
+			right: 0;
+		}
+		.mCSB_scrollTools {
+			.mCSB_draggerContainer {
+				height: 100%;
+			}
+			.mCSB_draggerRail {
+				background-color: transparent;
+			}
+		}
+	}
+
+	&.cmma-modal-show {
+		&:before {
+			display: block;
+		}
+
+		.cmma-modal-content {
+			opacity: 1;
+			visibility: visible;
+			transform: translateY(0);
+		}
+	}
+
+	.cmma-modal-head {
+		position: relative;
+
+		h3 {
+			font-weight: 500;
+			margin-bottom: 120px;
+
+			@include responsive(md, true) {
+				margin-bottom: 70px;
+			}
+		}
+
+		.cmma-modal-close {
+			font-weight: 300;
+			font-size: 20px;
+			position: relative;
+			top: -59px;
+			cursor: pointer;
+			position: absolute;
+			right: -69px;
+			display: flex;
+			width: 55px;
+			height: 55px;
+			align-items: center;
+			justify-content: center;
+
+			@include responsive(md, true) {
+				top: -40px;
+				right: -19px;
+			}
+		}
+	}
+}
+
+@include responsive(md, true) {
+	.widget-modal {
+		.cmma-modal-content {
+			transform: translate(200%, 0);
+		}
+
+		&.cmma-modal-show {
+			.cmma-modal-content {
+				transform: translate(0%, 0);
+			}
+		}
+	}
+}
+
+
+.single-market {
+  .gform_wrapper {
+    .gform_heading {
+      display: block;
+    }
+    .gform_description {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+  }
+  
+}
+
+.gform_validation_error {
+  .gform-field-label {
+    top: -3px;
+    font-size: 16px;
+    transition: all ease-in-out 0.3s;
+  }
+}
+ 

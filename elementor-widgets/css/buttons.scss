@@ -1,0 +1,71 @@
+.cmma-button {
+	display: inline-flex;
+	align-items: center;
+	text-decoration: none;
+	padding: 0;
+	background: none;
+	border-radius: 0;
+	font-style: italic;
+	@include responsive(md, true) {
+		align-items: flex-start;
+	}
+	svg {
+		@include responsive(xxl, false) {
+			width: .5rem;
+			height: auto;
+			top: 0.1rem;
+			position: relative;
+		}
+	}
+
+	.cmma-button-text {
+		white-space: nowrap;
+		position: relative;
+		display: inline-block;
+		transition: max-width ease-in-out 0.2s;
+		overflow: hidden;
+		padding-right: 10px;
+		@include responsive(md, true) {
+			white-space: normal;
+		}
+
+		@include responsive(lg) {
+			padding-right: 0;
+			max-width: 0;
+		}
+	}
+
+	.cmma-button-icon {
+		height: 24px;
+		@include responsive(xxl, false) {
+			height: auto;
+		}
+	}
+
+	&:focus,
+	&:focus-visible,
+	&:hover {
+		.cmma-button-text {
+			max-width: 100%;
+			padding-right: 10px;
+			transition: max-width ease-in-out 0.2s;
+		}
+	}
+
+	&.without-animation {
+		.cmma-button-text {
+			max-width: none;
+			padding-right: 10px;
+			transition: all ease-in-out 0.2s;
+		}
+
+		&:focus,
+		&:focus-visible,
+		&:hover {
+			.cmma-button-text {
+				padding-right: 18px;
+				transition: all ease-in-out 0.2s;
+			}
+		}
+	}
+}

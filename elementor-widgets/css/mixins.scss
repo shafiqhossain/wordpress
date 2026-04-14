@@ -1,0 +1,23 @@
+$breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1400px
+);
+
+@mixin responsive($media, $max: false, $screen-width: false) {
+	$breakpoint-width: if(map-has-key($breakpoints, $media), map-get($breakpoints, $media), $screen-width);
+
+	@if $max == false {
+		@media only screen and (min-width: $breakpoint-width) {
+			@content;
+		}
+	}
+	@else {
+		@media only screen and (max-width: $breakpoint-width - 1) {
+			@content;
+		}
+	}
+}

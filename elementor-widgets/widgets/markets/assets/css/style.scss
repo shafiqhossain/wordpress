@@ -1,0 +1,108 @@
+@import '../../../../css/config.scss';
+
+.markets-wrapper {
+	padding-left: 7.37rem;
+
+	@include responsive(lg, true) {
+		padding-left: 0;
+	}
+
+	.markets-list {
+		display: flex;
+		justify-content: flex-start;
+
+		@include responsive(md, true) {
+			flex-wrap: wrap;
+			width: 100%;
+		}
+
+		&-title {
+			font-weight: 500;
+			margin-top: 7px;
+		}
+
+		&-left {
+			width: 10rem;
+			margin-right: 5rem;
+
+			@include responsive(md, true) {
+				width: 100%;
+				margin-right: 0px;
+				margin-bottom: 20px;
+			}
+		}
+
+		&-right {
+			@include responsive(md, true) {
+				width: 100%;
+			}
+		}
+	}
+
+	.market-item {
+		&-heading {
+			display: inline-block;
+			@include responsive(md, true) {
+				display: block;
+			}
+		}
+		&-title {
+			margin: 0px 0 20px 0;
+			position: relative;
+			transition: all ease-in-out 0.2s;
+			left: 0;
+			cursor: pointer;
+      		display: inline-block;
+
+			@include responsive(md, true) {
+				padding-right: 25px;
+        		display: block;
+			}
+
+			&:hover {
+				transition: all ease-in-out 0.2s;
+				left: 15px;
+				@include responsive(md, true) {
+					left: 0;
+				}
+			}
+
+			svg {
+				position: absolute;
+				right: 0;
+				top: 25px;
+				transition: all ease-in-out 0.2s;
+				transform: rotate(0);
+				display: none;
+				@include responsive(md) {
+					display: none;
+				}
+			}
+		}
+
+		&-heading {
+			&.active {
+				svg {
+					transition: all ease-in-out 0.2s;
+					transform: rotate(90deg);
+				}
+			}
+		}
+
+		&-content {
+			display: none;
+			max-width: 25rem;
+			margin-bottom: 2.5rem;
+
+			@include responsive(md, true) {
+				margin-bottom: 20px;
+			}
+		}
+
+		&-description {
+			p {
+				margin-bottom: 15px;
+			}
+		}
+	}
+}

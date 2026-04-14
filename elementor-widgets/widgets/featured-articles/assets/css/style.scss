@@ -1,0 +1,51 @@
+@import '../../../../css/config.scss';
+
+.cmma-featured-article {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	width: 100%;
+	gap: 100px;
+
+	@include responsive(lg, true) {
+		flex-wrap: wrap;
+		gap: 20px;
+	}
+
+	img {
+		width: 100%;
+		height: auto;
+	}
+
+	p {
+		font-size: 1.25rem;
+		font-weight: 300;
+		line-height: 1.5rem;
+		margin-top: 1.25rem;
+		margin-bottom: 1rem;
+
+		@include responsive(md, true) {
+			font-size: 18px;
+			line-height: 22px;
+		}
+	}
+
+	.cmma-featured-article-inner {
+		&:first-child {
+			width: 44.5rem;
+
+			@include responsive(lg, true) {
+				max-width: 100%;
+			}
+		}
+
+		&:last-child {
+			width: 16rem;
+			padding-top: 5rem;
+
+			@include responsive(lg, true) {
+				max-width: 100%;
+			}
+		}
+	}
+}

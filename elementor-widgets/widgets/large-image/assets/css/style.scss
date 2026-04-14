@@ -1,0 +1,32 @@
+@import '../../../../css/common.scss';
+
+.panel-wrapper.large-image {
+	.large-image-element {
+		@include responsive(lg) {
+			margin-bottom: 50px;
+
+			&:after {
+				content: '';
+				background-color: var(--theme-color-secondary-green);
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				width: 100%;
+				height: 8px;
+				opacity: 0;
+				transition: all ease-in-out .4s;
+				z-index: 1;
+			}
+
+			&:hover {
+				&:after {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	.large-image-inner {
+		max-width: 100%;
+	}
+}

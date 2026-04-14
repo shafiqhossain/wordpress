@@ -14,13 +14,13 @@ global $wp_query;
 $total_pages = $wp_query->max_num_pages;
 ?>
 <main id="content" class="search-page">
-	<div class="smma-container">
+	<div class="cmma-container">
 		<div class="search-wrapper">
 			<div class="search-top">
 				<div class="search-icon">
 					<?php
-					if ( function_exists( 'smma_elementor_icons' ) ) :
-						echo smma_elementor_icons( 'search' );
+					if ( function_exists( 'cmma_elementor_icons' ) ) :
+						echo cmma_elementor_icons( 'search' );
 					endif;
 					?>
 				</div>
@@ -66,7 +66,7 @@ $total_pages = $wp_query->max_num_pages;
 						?>
 					</div>
 					<div class="load-more-container">
-						<div class="load-more-loader" style="display: none;"><?php echo smma_elementor_icons( 'loader', 'currentColor' ); ?></div>
+						<div class="load-more-loader" style="display: none;"><?php echo cmma_elementor_icons( 'loader', 'currentColor' ); ?></div>
 						<button id="load-more-button" class="load-more-button" data-current-page="1" data-total-pages="<?= $total_pages ?>" <?= $total_pages == 1 ? 'style="display: none;"' : '' ?>><?= __(' Load More + ') ?></button>
 					</div>
 				</div>
@@ -129,7 +129,7 @@ $total_pages = $wp_query->max_num_pages;
 						s: '<?= get_query_var( 's' ) ?>',
 						filter: $j('.search-filters a.active').attr('data-key'),
 						page: page,
-						action: 'smma_search_posts'
+						action: 'cmma_search_posts'
 					},
 					success: function(response) {
 						$loadMoreButton.attr('data-current-page', page);

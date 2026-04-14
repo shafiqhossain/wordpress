@@ -1,0 +1,199 @@
+@import '../../../../css/config.scss';
+
+.quote-wrapper {
+
+	@include responsive(lg) {
+		padding-left: 135px;
+		padding-right: 135px;
+	}
+
+	.quote-panel {
+		&-inner {
+			display: flex;
+			max-width: 1025px;
+
+			@include responsive(lg, true) {
+				flex-wrap: wrap;
+			}
+		}
+
+		&-left {
+			width: 14rem;
+			margin-right: 2.188rem;
+
+			@include responsive(lg, true) {
+				margin-bottom: 1rem;
+			}
+
+			>img {
+				display: block;
+				max-width: 100%;
+			}
+		}
+
+		&-img-yes {
+			display: none;
+		}
+
+		&-right {
+			max-width: 39rem;
+			width: 100%;
+
+			.author-content-control {
+				margin-bottom: 12px;
+				padding-top: 20px;
+				max-width: 34.688rem;
+
+				text-decoration: none;
+				font-weight: 500;
+				font-size: 1.25rem;
+				font-style: normal;
+
+				@include responsive(md, true) {
+					font-size: 1.125rem;
+				}
+
+				span {
+					font-weight: 300;
+					display: inline-block;
+				}
+
+			}
+			@include responsive(md, true) {
+				h4{
+					font-size: 18px;
+					line-height: 22px;
+				}
+			}
+		}
+
+		&-content {
+			* {
+				max-width: none;
+			}
+
+			.author-designation {
+				padding-top: 20px;
+
+				@include responsive(lg, true) {
+					padding-top: 12px;
+				}
+			}
+		}
+	}
+
+	.content-length {
+		&-full {
+			max-width: 789px;
+		}
+
+		&-small {
+			max-width: 555px;
+		}
+	}
+
+	&.content-placement-right {
+		@include responsive(lg) {
+			.quote-panel-inner {
+				max-width: 39rem;
+			}
+
+			.quote-panel-right {
+				max-width: 555px;
+			}
+		}
+	}
+}
+
+.logged-in {
+	.widget-modal {
+		.cmma-modal-content {
+			// top: 60px;
+			// height: calc(100% - 60px);
+
+			@include responsive(md, true) {
+				top: 30px;
+				height: calc(100% - 30px);
+			}
+		}
+
+		// &.scroll-end {
+		// 	.cmma-modal-content {
+		// 		height: calc(100% - 90px);
+		// 	}
+		// }
+	}
+}
+
+.author-modal {
+	&-head {
+		margin-bottom: 80px;
+
+		@include responsive(lg, true) {
+			margin-bottom: 45px;
+		}
+	}
+
+	&-top {
+		display: flex;
+		margin-bottom: 80px;
+
+		@include responsive(lg, true) {
+			flex-wrap: wrap;
+			margin-bottom: 10px;
+		}
+	}
+
+	&-left {
+		width: 14rem;
+		max-width: 100%;
+		padding-right: 35px;
+
+		@include responsive(lg, true) {
+			padding-bottom: 15px;
+		}
+	}
+
+	&-right {
+		width: calc(100% - 14rem);
+	}
+
+	.author-contact,
+	.author-education,
+	.author-affiliations {
+		margin-bottom: 40px;
+	}
+
+	.author-email {
+		margin-bottom: 7px;
+	}
+
+	.author-contact,
+	.author-education,
+	.author-affiliations {
+		>label {
+			display: block;
+			margin-bottom: 15px;
+		}
+	}
+
+	&.widget-modal {
+		@include responsive(md, true) {
+			.cmma-modal-head {
+				.cmma-modal-close {
+					top: -81px
+				}
+			}
+
+			.cmma-modal-content {
+				padding-top: 80px;
+			}
+		}
+	}
+
+	.cmma-modal-description {
+		img {
+			margin: 20px 0;
+		}
+	}
+}

@@ -1,6 +1,6 @@
 <?php
 
-function smma_get_next_post_by_market($post_id) {
+function cmma_get_next_post_by_market($post_id) {
 	$select_market_post = get_field('select_market_post', $post_id);
 	if ($select_market_post && count($select_market_post)) {
 		$select_market_post = array_column($select_market_post,'ID');
@@ -54,7 +54,7 @@ function _footerNextPost() {
 
     $next_post = get_next_post();
     if ($post_type == 'project') {
-        $next_post = smma_get_next_post_by_market($post_id);
+        $next_post = cmma_get_next_post_by_market($post_id);
     }
 
     if (empty($next_post)) :
@@ -75,28 +75,28 @@ function _footerNextPost() {
         $next_post_title      = $next_post->post_title;
         $next_post_image_id   = get_post_thumbnail_id($next_post_id);
         $next_post_permalink  = get_permalink($next_post_id);
-        $image_info           = smma_elementor_widgets_get_responsive_image_data($next_post_image_id, 'full');
+        $image_info           = cmma_elementor_widgets_get_responsive_image_data($next_post_image_id, 'full');
         ?>
 
-        <div class="smma-next-project">
-            <div class="smma-container">
+        <div class="cmma-next-project">
+            <div class="cmma-container">
                 <?php if (isset($image_info) && !empty($image_info['srcset'])) : ?>
-                    <div class="smma-next-project-panel">
+                    <div class="cmma-next-project-panel">
                 <?php else : ?>
-                    <div class="smma-next-project-panel smma-without-img">
+                    <div class="cmma-next-project-panel cmma-without-img">
                 <?php endif; ?>
-                    <div class="smma-next-project-panel">
+                    <div class="cmma-next-project-panel">
                         <?php if (isset($image_info) && !empty($image_info['srcset'])) : ?>
-                            <div class="smma-next-project-img">
+                            <div class="cmma-next-project-img">
                                 <img srcset="<?= esc_attr($image_info['srcset']) ?>" src="<?= esc_url($image_info['url']) ?>" loading="lazy" height="100%" width="100%" alt="" />
                             </div>
                         <?php endif; ?>
-                        <div class="smma-next-project-info">
+                        <div class="cmma-next-project-info">
                             <h6>Next <?= ucfirst($post_type); ?></h6>
                             <h2><?= esc_html($next_post_title); ?></h2>
-                            <a href="<?= esc_url($next_post_permalink); ?>" class="smma-button smma-button-type-text smma_block_modal_toggle">
-                                <span class="smma-button-text">Read More</span>
-                                <span class="smma-button-icon"><?= smma_elementor_icons('arrow', 'currentColor'); ?></span>
+                            <a href="<?= esc_url($next_post_permalink); ?>" class="cmma-button cmma-button-type-text cmma_block_modal_toggle">
+                                <span class="cmma-button-text">Read More</span>
+                                <span class="cmma-button-icon"><?= cmma_elementor_icons('arrow', 'currentColor'); ?></span>
                             </a>
                         </div>
                     </div>
@@ -106,4 +106,4 @@ function _footerNextPost() {
     <?php endif;
     return ob_get_clean();
 }
-add_shortcode('smma_footer_next_post', '_footerNextPost');
+add_shortcode('cmma_footer_next_post', '_footerNextPost');

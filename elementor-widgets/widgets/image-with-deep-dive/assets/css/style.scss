@@ -1,0 +1,35 @@
+@import '../../../../css/config.scss';
+
+.image-with-deep-dive {
+	&.panel-two-image-wrapper {
+		@include responsive(lg) {
+			align-items: normal;
+
+			.panel-small-two-image {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				min-height: calc(var(--large-image-content-height));
+			}
+		}
+	}
+}
+
+.elementor-widget-image-with-deep-dive{
+	.widget-modal{
+		.cmma-modal-head{
+			h3{
+				font-size: 20px;
+				line-height: 24px;
+			}
+		}
+	}
+}
+@include responsive(md,true) {
+	.image-with-deep-dive + .widget-modal {
+		.cmma-modal-content {
+			width :calc(100% - 40px);
+			height: 100%;
+		}
+	}
+}

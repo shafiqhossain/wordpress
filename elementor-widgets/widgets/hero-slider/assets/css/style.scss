@@ -1,0 +1,57 @@
+@import '../../../../css/config.scss';
+
+.cmma-hero {
+	&-wrapper {
+		.slick-arrow {
+			top: auto;
+			bottom: 32px;
+			z-index: 1;
+			@include responsive(md, true) {
+				bottom: 27px;
+			}
+
+			&.cmma-prev-btn {
+				right: 59px;
+			}
+
+			&.cmma-next-btn {
+				right: 30px;
+			}
+		}
+	}
+
+	&-image {
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		display: flex;
+		align-items: flex-end;
+		position: relative;
+
+		&:after {
+			content: "";
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			height: 347px;
+			background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(140, 140, 140, 0) 100%);
+			opacity: 0.5;
+		}
+	}
+
+	&-caption {
+		padding: 0 100px 17px 30px;
+		position: relative;
+		z-index: 1;
+		width: 100%;
+
+		@include responsive(md, true) {
+			padding: 0 100px 13px 24px;
+		}
+
+		h5 {
+			font-weight: 300;
+		}
+	}
+}

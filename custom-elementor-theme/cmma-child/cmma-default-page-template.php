@@ -3,7 +3,7 @@
  * Custom page template
  *
  *
- * Template name: SMMA Default page template
+ * Template name: CMMA Default page template
  *
  * @package HelloElementor
  */

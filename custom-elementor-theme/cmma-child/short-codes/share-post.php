@@ -2,11 +2,11 @@
 function _footerSharePost() {
     ob_start();
     ?>
-	<div class="smma-container">
-    	<div class="smma-share-block">
-			<div class="smma-share-block-inner">
+	<div class="cmma-container">
+    	<div class="cmma-share-block">
+			<div class="cmma-share-block-inner">
 				<p> Share: </p>
-				<div class="smma-shared-links">
+				<div class="cmma-shared-links">
 					<a href="https://www.linkedin.com/sharing/share-offsite/?url=<?= urlencode(get_permalink()); ?>" target="_blank" rel="noopener noreferrer"> LinkedIn</a> /
 					<a href="mailto:?subject=<?= urlencode(get_the_title()); ?>&body=<?= urlencode(get_permalink()); ?>" target="_blank" rel="noopener noreferrer"> Email</a> /
 					<div class="copy-link-wrapper">
@@ -20,4 +20,4 @@ function _footerSharePost() {
     <?php
     return ob_get_clean();
 }
-add_shortcode('smma_share_post', '_footerSharePost');
+add_shortcode('cmma_share_post', '_footerSharePost');

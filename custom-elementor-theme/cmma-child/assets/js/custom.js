@@ -42,20 +42,20 @@ window.addEventListener('DOMContentLoaded', function () {
     $j(this).parents('.elementor-search-form').toggleClass('elementor-search-input__open');
   });
 
-  $j('.smma-page-slideshow').slick();
+  $j('.cmma-page-slideshow').slick();
 
-  $j('.smma-page-slideshow').on('beforeChange', function (event, slick) {
+  $j('.cmma-page-slideshow').on('beforeChange', function (event, slick) {
     playPauseVideo($j(slick.$slider), 'pause');
   });
 
-  $j('.smma-page-slideshow').on('afterChange', function (event, slick) {
+  $j('.cmma-page-slideshow').on('afterChange', function (event, slick) {
     playPauseVideo($j(slick.$slider), 'play');
   });
 
   $j('.control-icon').on('click', function (event, slick) {
-    var item = $j(this).closest('.single-hero-slider, .smma-slide-iframe.youtube-embed');
+    var item = $j(this).closest('.single-hero-slider, .cmma-slide-iframe.youtube-embed');
     var player = item.find('iframe').get(0);
-    var embeddedVideo = $j(this).closest('.smma-embedded-video');
+    var embeddedVideo = $j(this).closest('.cmma-embedded-video');
 
     if (embeddedVideo.length) {
       player = embeddedVideo.find('iframe').get(0);
@@ -69,28 +69,28 @@ window.addEventListener('DOMContentLoaded', function () {
     setTimeout(() => {
       item.find(".youtube-thumb").hide();
       item.find(".panel-video-embed").show();
-      item.find(".smma-video-replay-btn").show();
-      item.find(".smma-video-embed-audio").show();
+      item.find(".cmma-video-replay-btn").show();
+      item.find(".cmma-video-embed-audio").show();
     }, 300);
   });
 
-  $j('.smma-video-replay-btn').on('click', function () {
-    var player = $j(this).closest('.smma-embedded-video, .single-hero-slider, .smma-slide-iframe.youtube-embed')
+  $j('.cmma-video-replay-btn').on('click', function () {
+    var player = $j(this).closest('.cmma-embedded-video, .single-hero-slider, .cmma-slide-iframe.youtube-embed')
       .find('iframe')
       .get(0);
 
     if (player) {
-      var isPlayerMuted = $j(this).closest('.smma-container, .smma-embedded-video').find('.smma-video-embed-audio').hasClass('muted');
+      var isPlayerMuted = $j(this).closest('.cmma-container, .cmma-embedded-video').find('.cmma-video-embed-audio').hasClass('muted');
       var videoSrc = $j(player).attr('src').replace(/autoplay=\d/, 'autoplay=1').replace(/&?mute=\d/, '');
       videoSrc += isPlayerMuted ? '&mute=1' : '&mute=0';
       $j(player).attr('src', videoSrc);
     }
   });
 
-  $j('.smma-video-embed-audio, .audio-btn-block').on('click', function (event, slick) {
+  $j('.cmma-video-embed-audio, .audio-btn-block').on('click', function (event, slick) {
     var isMuted = true
-    var player = $j(this).closest('.single-hero-slider, .smma-slide-iframe.youtube-embed').find('iframe').get(0);
-    var embeddedVideo = $j(this).closest('.smma-embedded-video');
+    var player = $j(this).closest('.single-hero-slider, .cmma-slide-iframe.youtube-embed').find('iframe').get(0);
+    var embeddedVideo = $j(this).closest('.cmma-embedded-video');
     if (embeddedVideo.length) {
       player = embeddedVideo.find('iframe').get(0);
     }
@@ -274,7 +274,7 @@ window.addEventListener('DOMContentLoaded', function () {
       return;
     }
 
-    let isJumpNavigation = link.closest('.smma-footer-jump-navigation-wrapper')
+    let isJumpNavigation = link.closest('.cmma-footer-jump-navigation-wrapper')
     if (isJumpNavigation.length) {
       return
     }
@@ -299,10 +299,10 @@ window.addEventListener('DOMContentLoaded', function () {
       // Check if the domain is the same as the current site's domain
       if (clickedDomain === currentDomain && url.includes("/people/") || url.includes("/member/")) {
         let modalId = link.attr('data-member-modal-id')
-        let modalExist = $j(`#smma-modal-${modalId}`);
+        let modalExist = $j(`#cmma-modal-${modalId}`);
 
         if (modalExist.length) {
-          modalExist.addClass('smma-modal-show');
+          modalExist.addClass('cmma-modal-show');
           history.pushState(null, null, url);
           return initializePeopleSliderWrapper(modalExist);
         } else {
@@ -310,55 +310,55 @@ window.addEventListener('DOMContentLoaded', function () {
           try {
             return $j.post(ajaxurl, {
               url,
-              'action': 'smma_create_member_modal'
+              'action': 'cmma_create_member_modal'
             }, function (response) {
               if (response && response.data) {
                 const { success, html, modal_id, modal_title } = response.data;
                 if (success) {
                   link.attr('data-member-modal-id', modal_id)
-                  document.title = modal_title + ' - SMMA';
-                  let modalExist = $j(`#smma-modal-${modal_id}`);
+                  document.title = modal_title + ' - CMMA';
+                  let modalExist = $j(`#cmma-modal-${modal_id}`);
                   if (modalExist.length) {
-                    modalExist.addClass('smma-modal-show');
+                    modalExist.addClass('cmma-modal-show');
                   } else {
                     $j('body').append(html);
-                    initializePeopleSliderWrapper($j(`#smma-modal-${modal_id}`));
+                    initializePeopleSliderWrapper($j(`#cmma-modal-${modal_id}`));
                   }
                   // Custom scrollbar initialization
 
                   history.pushState(null, null, url);
-                  $j(".smma-people-modal .smma-modal-content").mCustomScrollbar({
+                  $j(".cmma-people-modal .cmma-modal-content").mCustomScrollbar({
                     scrollButtons: { enable: true },
                     theme: "light-thick",
                     scrollbarPosition: "outside"
                   });
                 } else {
-                  return _smmaOpenNewPage(url, target);
+                  return _cmmaOpenNewPage(url, target);
                 }
               }
             });
           } catch (error) {
-            return _smmaOpenNewPage(url, target);
+            return _cmmaOpenNewPage(url, target);
           }
         }
       } else {
-        return _smmaOpenNewPage(url, target);
+        return _cmmaOpenNewPage(url, target);
       }
     }
-    return _smmaOpenNewPage(url, target);
+    return _cmmaOpenNewPage(url, target);
   });
 
 
 
   initializePeopleSliderWrapper($j('body'));
   function initializePeopleSliderWrapper(dom) {
-    var $carousel = $j(dom).find('.smma-people-slider-wrapper').not('.slick-initialized');
+    var $carousel = $j(dom).find('.cmma-people-slider-wrapper').not('.slick-initialized');
     if ($carousel.length) {
       $carousel.slick();
     }
   }
 
-  function _smmaOpenNewPage(url, target) {
+  function _cmmaOpenNewPage(url, target) {
     console.log(url, target);
 
     if (target) {
@@ -381,14 +381,14 @@ window.addEventListener('DOMContentLoaded', function () {
       }
     });
 
-    $j('.smma-gravity-form-button').on('click', function () {
+    $j('.cmma-gravity-form-button').on('click', function () {
       $j(this).hide();
-      $j('.smma-gravity-form').show();
+      $j('.cmma-gravity-form').show();
     });
 
-    $j('.smma-gravity-form-button').on('click', function () {
+    $j('.cmma-gravity-form-button').on('click', function () {
       // Set focus on the email input field
-      $j('.smma-gravity-form form input[type="email"]').focus();
+      $j('.cmma-gravity-form form input[type="email"]').focus();
     });
   });
 

@@ -25,7 +25,7 @@ endif;
 add_action( 'wp_enqueue_scripts', 'child_theme_configurator_css', 10 );
 
 // END ENQUEUE PARENT ACTION
-function smma_child_theme_scripts() {
+function cmma_child_theme_scripts() {
     // Get the current theme version
     $theme_version = wp_get_theme()->get('Version');
 
@@ -36,7 +36,7 @@ function smma_child_theme_scripts() {
     wp_enqueue_script('animation-script', get_stylesheet_directory_uri() . '/assets/js/wow.js', array('jquery'), $theme_version, true);
 }
 // Hook the function to the wp_enqueue_scripts action
-add_action('wp_enqueue_scripts', 'smma_child_theme_scripts');
+add_action('wp_enqueue_scripts', 'cmma_child_theme_scripts');
 // ------ Custom Code
 
 require get_stylesheet_directory() . '/short-codes/index.php';
@@ -50,10 +50,10 @@ function custom_wp_search_size( $query ) {
 }
 add_filter( 'pre_get_posts', 'custom_wp_search_size' );
 
-add_action( 'wp_ajax_nopriv_smma_search_posts', 'smma_search_posts' );
-add_action( 'wp_ajax_smma_search_posts', 'smma_search_posts' );
+add_action( 'wp_ajax_nopriv_cmma_search_posts', 'cmma_search_posts' );
+add_action( 'wp_ajax_cmma_search_posts', 'cmma_search_posts' );
 
-function smma_search_posts() {
+function cmma_search_posts() {
 	$paged     = sanitize_text_field( $_POST['page'] );
 	$param     = sanitize_text_field( $_POST['s'] );
 	$post_type = sanitize_text_field( $_POST['filter'] );
@@ -169,9 +169,9 @@ function add_custom_query_vars($vars) {
 }
 add_filter('query_vars', 'add_custom_query_vars');
 
-add_action( 'wp_ajax_nopriv_smma_create_member_modal', 'smma_create_member_modal' );
-add_action( 'wp_ajax_smma_create_member_modal', 'smma_create_member_modal' );
-function smma_create_member_modal() {
+add_action( 'wp_ajax_nopriv_cmma_create_member_modal', 'cmma_create_member_modal' );
+add_action( 'wp_ajax_cmma_create_member_modal', 'cmma_create_member_modal' );
+function cmma_create_member_modal() {
 	$response = [
 		'success'	=> true,
 	];
@@ -203,12 +203,12 @@ function smma_create_member_modal() {
 
 
 
-function smma_wpseo_metadesc($description) {
+function cmma_wpseo_metadesc($description) {
 	$post_id = get_the_ID();
 	if (is_singular('member')){
 		$description = get_the_content($post_id);
 		if ($description) {
-			return smma_get_first_paragraph_from_html($description);
+			return cmma_get_first_paragraph_from_html($description);
 		}
 	}
 
@@ -225,7 +225,7 @@ function smma_wpseo_metadesc($description) {
     // Return the default description if none of the conditions match.
     return $description;
 }
-add_filter('wpseo_metadesc', 'smma_wpseo_metadesc');
+add_filter('wpseo_metadesc', 'cmma_wpseo_metadesc');
 
 function fetch_elementor_description($fieldType, $yoastDescription) {
     $post_id = get_the_ID();
@@ -234,7 +234,7 @@ function fetch_elementor_description($fieldType, $yoastDescription) {
 		// Attempt to get the description from a custom field.
 		$description = get_field($fieldType, $post_id);
 		if ($description) {
-			return smma_get_first_paragraph_from_html($description);
+			return cmma_get_first_paragraph_from_html($description);
 		}
 	}
 
@@ -246,9 +246,9 @@ function fetch_elementor_description($fieldType, $yoastDescription) {
         foreach ($elementor_data as $element) {
             if (isset($element['elements']) && is_array($element['elements'])) {
                 foreach ($element['elements'] as $element_item) {
-                    $description = smma_fetch_elementor_widget_description($element_item);
+                    $description = cmma_fetch_elementor_widget_description($element_item);
                     if ($description) {
-                        return smma_get_first_paragraph_from_html($description);
+                        return cmma_get_first_paragraph_from_html($description);
                     }
                 }
             }
@@ -257,7 +257,7 @@ function fetch_elementor_description($fieldType, $yoastDescription) {
 
     return $yoastDescription;
 }
-function smma_get_first_paragraph_from_html($html) {
+function cmma_get_first_paragraph_from_html($html) {
     $doc = new DOMDocument();
     @$doc->loadHTML(mb_convert_encoding($html, 'HTML-ENTITIES', 'UTF-8'));
 
@@ -268,20 +268,20 @@ function smma_get_first_paragraph_from_html($html) {
     return $paragraphs->length > 0 ? trim($paragraphs->item(0)->textContent) : sanitize_text_field($html);
 }
 
-function smma_fetch_elementor_widget_description($element) {
+function cmma_fetch_elementor_widget_description($element) {
     $widgets = [
 		'wysiwyg',
-		'smma-accordion',
-        'smma-two-image',
+		'cmma-accordion',
+        'cmma-two-image',
 		'image-with-story',
-        'smma-large-image',
-        'smma-single-image',
-		'smma-single-video',
-		'smma-media-gallery',
-		'smma-featured-text',
-        'smma-image-carousel',
+        'cmma-large-image',
+        'cmma-single-image',
+		'cmma-single-video',
+		'cmma-media-gallery',
+		'cmma-featured-text',
+        'cmma-image-carousel',
 		'image-with-deep-dive',
-		'smma-render-to-reality',
+		'cmma-render-to-reality',
     ];
 
     if (isset($element['widgetType']) && in_array($element['widgetType'], $widgets, true)) {
@@ -350,10 +350,10 @@ function custom_redirect_people_to_our_people_dynamic() {
 }
 
 
-function _smma_theme_setup() {
+function _cmma_theme_setup() {
   add_theme_support( 'site-icon' );
 }
-add_action( 'after_setup_theme', '_smma_theme_setup' );
+add_action( 'after_setup_theme', '_cmma_theme_setup' );
 
 // Include Disable Comments class
 require_once get_stylesheet_directory() . '/inc/disable-comments.php';
@@ -483,7 +483,7 @@ function gf_auto_download_after_submit($confirmation, $form, $entry, $ajax) {
 
         // AUTO CLOSE MODAL
         var observer = new MutationObserver(function () {
-          var closeBtn = document.querySelector('.smma-modal-close');
+          var closeBtn = document.querySelector('.cmma-modal-close');
 
           if (closeBtn) {
             setTimeout(function () {

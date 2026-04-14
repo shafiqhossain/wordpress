@@ -1,5 +1,5 @@
 <?php
-function _smmaEmbeddedVideo($atts) {
+function _cmmaEmbeddedVideo($atts) {
     ob_start();
 
     // Extract the 'url' attribute from the shortcode
@@ -13,7 +13,7 @@ function _smmaEmbeddedVideo($atts) {
 	$mute_icon_display = $atts['mute_icon_display'];
     // Begin output with wrapper div
     ?>
-    <div class="smma-embedded-video">
+    <div class="cmma-embedded-video">
 		<?php
 
 			if (empty($video_link)) {
@@ -26,17 +26,17 @@ function _smmaEmbeddedVideo($atts) {
 				}
 				?>
 					<div class="<?= $video_type ?>-embed">
-						<div id="smma-video-replay-btn" class="smma-video-replay-btn">
-							<?= smma_elementor_icons( 'replay', 'currentColor' ); ?>
+						<div id="cmma-video-replay-btn" class="cmma-video-replay-btn">
+							<?= cmma_elementor_icons( 'replay', 'currentColor' ); ?>
 						</div>
-						<?= smma_video_oembed_get($video_link, $video_type); ?>
+						<?= cmma_video_oembed_get($video_link, $video_type); ?>
 						<?php if ($mute_icon_display === 'yes' ):?>
-							<div id="smma-video-embed-audio" class="smma-video-embed-audio muted">
+							<div id="cmma-video-embed-audio" class="cmma-video-embed-audio muted">
 								<span class="mute-btn " style="display: none">
-									<?= smma_elementor_icons( 'unmute', 'currentColor' ); ?>
+									<?= cmma_elementor_icons( 'unmute', 'currentColor' ); ?>
 								</span>
 								<span class="unmute-btn">
-									<?= smma_elementor_icons( 'mute', 'currentColor' ); ?>
+									<?= cmma_elementor_icons( 'mute', 'currentColor' ); ?>
 								</span>
 							</div>
 						<?php endif; ?>
@@ -50,4 +50,4 @@ function _smmaEmbeddedVideo($atts) {
 
     return ob_get_clean();
 }
-add_shortcode('smma_embedded_video', '_smmaEmbeddedVideo');
+add_shortcode('cmma_embedded_video', '_cmmaEmbeddedVideo');

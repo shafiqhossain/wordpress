@@ -1,0 +1,87 @@
+@import '../../../../css/config.scss';
+
+.grid {
+	&-layout {
+		display: flex;
+		align-items: start;
+		gap: 32px;
+
+		@include responsive(md, true) {
+			flex-wrap: wrap;
+			gap: 40px;
+		}
+
+		&-2 {
+			>div:first-child {
+				width: calc(42% - 16px);
+
+				@include responsive(md, true) {
+					width: 75%;
+				}
+			}
+
+			>div:last-child {
+				width: calc(58% - 16px);
+
+				@include responsive(md, true) {
+					width: 100%;
+				}
+			}
+		}
+
+		&-3 {
+			>div:first-child {
+				width: calc(25% - 16px);
+
+				@include responsive(md, true) {
+					width: 75%;
+				}
+			}
+
+			>div:nth-child(2) {
+				width: calc(50% - 16px);
+
+				@include responsive(md, true) {
+					width: 100%;
+				}
+			}
+
+			>div:last-child {
+				width: calc(25% - 16px);
+
+				@include responsive(md, true) {
+					width: 75%;
+				}
+			}
+		}
+
+		&-4 {
+			>div {
+				width: calc(25% - 16px);
+
+				@include responsive(md, true) {
+					&:nth-child(odd) {
+						width: 75%;
+					}
+
+					&:nth-child(even) {
+						margin-left: 25%;
+						width: 75%;
+					}
+				}
+			}
+		}
+	}
+
+	&-image {
+		margin-bottom: 20px;
+
+		@include responsive(md, true) {
+			margin-bottom: 15px;
+		}
+
+		img {
+			display: block;
+		}
+	}
+}

@@ -10,8 +10,8 @@ $post_image = get_post_thumbnail_id();
 		<?php if ( $post_type === 'project' ) : ?>
 			<?php if ( $post_image ) : ?>
 				<?php
-				if ( function_exists( 'smma_elementor_widgets_get_responsive_image_data' ) ) :
-					$image_info = smma_elementor_widgets_get_responsive_image_data( $post_image, 'full' );
+				if ( function_exists( 'cmma_elementor_widgets_get_responsive_image_data' ) ) :
+					$image_info = cmma_elementor_widgets_get_responsive_image_data( $post_image, 'full' );
 				endif;
 				?>
 				<div class="single-item-image">

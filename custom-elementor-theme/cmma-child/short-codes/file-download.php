@@ -4,7 +4,7 @@ function _heroFileDownload() {
     $downloadBtn = get_field('file_download_enable');
     $filedownloadBtn = get_field('filedownload_color_scheme');
     if ($downloadBtn) : ?>
-        <div class="smma-download-btn color-scheme-<?php echo $filedownloadBtn; ?>">
+        <div class="cmma-download-btn color-scheme-<?php echo $filedownloadBtn; ?>">
             <a href="<?= get_field('file_download_sheet_file'); ?>" target="_blank">
                 <?= get_field('file_download_button_text'); ?>
                 <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -16,4 +16,4 @@ function _heroFileDownload() {
     endif;
     return ob_get_clean();
 }
-add_shortcode('smma_file_download', '_heroFileDownload');
+add_shortcode('cmma_file_download', '_heroFileDownload');

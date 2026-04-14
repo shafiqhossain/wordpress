@@ -1,0 +1,191 @@
+@import '../../../../css/config.scss';
+
+.project-panel-slider {
+	padding-top: 20px;
+	width: 100%;
+	overflow: visible;
+	padding-left: 90px;
+	padding-right: 90px;
+	position: relative;
+	margin-top: 30px;
+	@include responsive(md, true) {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
+	img {
+		width: 100%;
+	}
+
+	.slick-slider {
+		position: static;
+	}
+
+	.slick-track {
+		display: flex;
+		gap: 30px;
+
+		@include responsive(md, true) {
+			gap: 15px;
+		}
+	}
+
+	.slick-list {
+		width: calc(100% + 40px);
+		margin-left: -20px;
+		overflow: visible;
+
+		@include responsive(lg, true) {
+			width: 80%;
+			overflow: visible;
+			margin: 0 auto;
+		}
+
+		@include responsive(md, true) {
+			width: 100%;
+		}
+	}
+
+	.panel-item-perspective {
+		background-color: #E6EDF8;
+		padding: 64px 35px 96px 35px;
+		position: relative;
+		overflow: hidden;
+		&:hover {
+			p {
+				font-style: italic;
+			}
+		}
+
+		@include responsive(md, true) {
+			padding: 30px 25px;
+		}
+
+		h2 {
+			font-size: 2.5rem;
+			@include responsive(md, true) {
+				font-size: 2.125rem;
+			}
+		}
+
+		&:after {
+			content: "";
+			position: absolute;
+			left: 0;
+			width: 100%;
+			height: 8px;
+			transition: all ease-in-out 0.3s;
+			bottom: -8px;
+			// background-color: #f06467;
+		}
+
+		&:hover {
+			&:after {
+				transition: all ease-in-out 0.3s;
+				bottom: 0px;
+			}
+		}
+
+		&.red {
+			&:after {
+				background-color: #f06467;
+			}
+		}
+
+		&.green {
+			&:after {
+				background-color: #7dc188;
+			}
+		}
+
+		&.yellow {
+			&:after {
+				background-color: #ffde32;
+			}
+		}
+	}
+
+
+	.panel-item-project {
+		p {
+			margin: 0;
+			transition: all ease-in-out 0.4s;
+		}
+
+		a:hover {
+			p {
+				transition: all ease-in-out 0.4s;
+				font-style: italic;
+			}
+		}
+
+		&-img {
+			position: relative;
+			overflow: hidden;
+			margin-bottom: 20px;
+
+			&:after {
+				content: "";
+				position: absolute;
+				left: 0;
+				width: 100%;
+				height: 8px;
+				transition: all ease-in-out 0.3s;
+				bottom: -8px;
+				// background-color: #7dc188;
+			}
+		}
+
+		&.green {
+			.panel-item-project-img {
+				&:after {
+					background-color: #7dc188;
+				}
+			}
+		}
+
+		&.red {
+			.panel-item-project-img {
+				&:after {
+					background-color: #f06467;
+				}
+			}
+		}
+
+		&.yellow {
+			.panel-item-project-img {
+				&:after {
+					background-color: #ffde32;
+				}
+			}
+		}
+
+		&:hover {
+			.panel-item-project-img {
+				&:after {
+					transition: all ease-in-out 0.3s;
+					bottom: 0px;
+				}
+			}
+		}
+	}
+}
+
+.color-scheme-dark {
+	.project-panel-slider {
+		.panel-item-perspective {
+			background-color: #3372CA;
+		}
+	}
+}
+
+.elementor-widget-cmma-related_projects_and_perspectives {
+	.project-panel-head {
+		.cmma-button {
+			.cmma-button-text {
+				max-width: none;
+				padding-right: 10px;
+			}
+		}
+	}
+}

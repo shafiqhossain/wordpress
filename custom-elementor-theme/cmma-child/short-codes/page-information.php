@@ -1,5 +1,5 @@
 <?php
-function __smma_page_information() {
+function __cmma_page_information() {
 	ob_start();
 	$menu_items                = get_field( 'menu_items' );
 	$short_description         = get_field( 'short_description' );
@@ -18,11 +18,11 @@ function __smma_page_information() {
 	$gravity_form_id					 = get_field( 'choose_gravity_form' );
 	?>
 
-	<div class="smma-page-information-container">
-		<div class="smma-page-spacer<?= $slides && count( $slides ) ? ' has-slideshow' : '' ?>"></div>
-		<?= do_shortcode( '[smma_slideshow]' ); ?>
-		<div class="smma-page-head">
-			<div class="smma-page-title">
+	<div class="cmma-page-information-container">
+		<div class="cmma-page-spacer<?= $slides && count( $slides ) ? ' has-slideshow' : '' ?>"></div>
+		<?= do_shortcode( '[cmma_slideshow]' ); ?>
+		<div class="cmma-page-head">
+			<div class="cmma-page-title">
 				<?php
 					if (isset($heading_size) && $heading_size === 'large') {
 						echo '<h1>' . get_the_title() . '</h1>';
@@ -31,34 +31,34 @@ function __smma_page_information() {
 					}
 				?>
 			</div>
-			<div class="smma-page-information">
-				<div class="smma-page-left">
+			<div class="cmma-page-information">
+				<div class="cmma-page-left">
 					<?php if ( $menu_items ) : ?>
-						<ul class="smma-page-menu">
+						<ul class="cmma-page-menu">
 							<?php
 								foreach( $menu_items as $key => $menu_item ) :
 									$page = $menu_item['page'];
 									if ($page) : ?>
-										<li class="smma-page-menu-item"><a href="<?= get_permalink( $page->ID ) ?>"><?= $page->post_title ?></a></li>
+										<li class="cmma-page-menu-item"><a href="<?= get_permalink( $page->ID ) ?>"><?= $page->post_title ?></a></li>
 									<?php endif;
 								endforeach;
 							?>
 						</ul>
 					<?php endif; ?>
 					<?php if ( $file_enable_download && $file_download_button ) : ?>
-						<div class="smma-page-download">
-							<a href="<?= $file_download_button['url'] ?>" class="smma-button smma-button-type-text without-animation">
-								<span class="smma-button-text"><?= esc_html( $file_download_button['title'] ); ?></span>
-								<span class="smma-button-icon">
-									<?php if ( function_exists( 'smma_elementor_icons' ) ) : ?>
-										<?= smma_elementor_icons( 'download', 'currentColor' ); ?>
+						<div class="cmma-page-download">
+							<a href="<?= $file_download_button['url'] ?>" class="cmma-button cmma-button-type-text without-animation">
+								<span class="cmma-button-text"><?= esc_html( $file_download_button['title'] ); ?></span>
+								<span class="cmma-button-icon">
+									<?php if ( function_exists( 'cmma_elementor_icons' ) ) : ?>
+										<?= cmma_elementor_icons( 'download', 'currentColor' ); ?>
 									<?php endif; ?>
 								</span>
 							</a>
 						</div>
 					<?php endif; ?>
 				</div>
-				<div class="smma-page-content">
+				<div class="cmma-page-content">
 					<?php if ( ! empty( $optional_overline ) ) : ?>
 						<h5><?= $optional_overline ?></h5>
 					<?php endif; ?>
@@ -68,31 +68,31 @@ function __smma_page_information() {
 					<?php endif; ?>
 
 					<?php if ( ! empty( $optional_link ) ) : ?>
-						<div class="smma-page-link">
-							<a href="<?= $optional_link['url'] ?>" class="smma-button smma-button-type-text without-animation">
-								<span class="smma-button-text"><?= esc_html( $optional_link['title'] ); ?> </span>
-								<span class="smma-button-icon"><?php echo smma_elementor_icons( 'arrow', 'currentColor' ); ?></span>
+						<div class="cmma-page-link">
+							<a href="<?= $optional_link['url'] ?>" class="cmma-button cmma-button-type-text without-animation">
+								<span class="cmma-button-text"><?= esc_html( $optional_link['title'] ); ?> </span>
+								<span class="cmma-button-icon"><?php echo cmma_elementor_icons( 'arrow', 'currentColor' ); ?></span>
 							</a>
 						</div>
 					<?php endif; ?>
 
 					<?php if ( ! empty( $gravity_form_id ) ) : ?>
-						<div class="smma-page-link">
-							<a href="#" class="smma-button smma-button-type-text without-animation smma-gravity-form-button">
-								<span class="smma-button-text">Sign up for updates</span>
-								<span class="smma-button-icon"><?php echo smma_elementor_icons( 'arrow', 'currentColor' ); ?></span>
+						<div class="cmma-page-link">
+							<a href="#" class="cmma-button cmma-button-type-text without-animation cmma-gravity-form-button">
+								<span class="cmma-button-text">Sign up for updates</span>
+								<span class="cmma-button-icon"><?php echo cmma_elementor_icons( 'arrow', 'currentColor' ); ?></span>
 							</a>
-							<div class="smma-gravity-form" style="display: none;">
+							<div class="cmma-gravity-form" style="display: none;">
 								<?= do_shortcode( '[gravityform id="' . $gravity_form_id . '"]' ); ?>
 							</div>
 						</div>
 					<?php endif; ?>
 
 					<?php if ( ! empty( $content_columns ) ) : ?>
-						<div class="smma-page-content-columns">
+						<div class="cmma-page-content-columns">
 							<?php foreach ( $content_columns as $content_column  ) : ?>
 								<?php if ( ! empty( $content_column['content'] ) ) : ?>
-									<div class="smma-page-content-column">
+									<div class="cmma-page-content-column">
 										<?= $content_column['content'] ?>
 									</div>
 								<?php endif; ?>
@@ -107,4 +107,4 @@ function __smma_page_information() {
 	return ob_get_clean();
 }
 
-add_shortcode( 'smma_page_information', '__smma_page_information' );
+add_shortcode( 'cmma_page_information', '__cmma_page_information' );

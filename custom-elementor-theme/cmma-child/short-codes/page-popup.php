@@ -1,5 +1,5 @@
 <?php
-function _smmaPagePopup()
+function _cmmaPagePopup()
 {
 	$page_id = get_queried_object_id();
 
@@ -10,10 +10,10 @@ function _smmaPagePopup()
 	if (!isset($_COOKIE['wp-settings-page-popup-'.$page_id]) && $show_modal) {
 		ob_start();
 		?>
-			<div class="smma-video-popup-container">
+			<div class="cmma-video-popup-container">
 				<div class="overlay"></div>
-				<div id="smma-video-modal-<?= $page_id; ?>" class="widget-modal smma-modal-show" data-type="page-popup" data-id="<?= $page_id; ?>">
-					<div class="smma-video-modal">
+				<div id="cmma-video-modal-<?= $page_id; ?>" class="widget-modal cmma-modal-show" data-type="page-popup" data-id="<?= $page_id; ?>">
+					<div class="cmma-video-modal">
 					<a href="/" class="site-logo ">
 						<svg xmlns="http://www.w3.org/2000/svg" width="83" height="17" viewBox="0 0 83 17" fill="none">
 							<g clip-path="url(#clip0_5023_7993)">
@@ -29,14 +29,14 @@ function _smmaPagePopup()
 							</defs>
 						</svg>
 						</a>
-						<a href="javascript:void(0);" class="smma-modal-close" data-modal-id="smma-video-modal-<?= $page_id; ?>">
+						<a href="javascript:void(0);" class="cmma-modal-close" data-modal-id="cmma-video-modal-<?= $page_id; ?>">
 							<svg fill="currentColor" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 								viewBox="0 0 490 490" xml:space="preserve">
 							<polygon points="456.851,0 245,212.564 33.149,0 0.708,32.337 212.669,245.004 0.708,457.678 33.149,490 245,277.443 456.851,490
 								489.292,457.678 277.331,245.004 489.292,32.337 "/>
 							</svg>
 						</a>
-						<div class="smma-video-modal-body">
+						<div class="cmma-video-modal-body">
 							<?php
 								if ($video_url && !empty($video_url)) :
 									$video_type = preg_match('/^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w\-]+\?v=|embed\/|v\/)?)([\w\-]+)(\S+)?$/', $video_url) ? 'youtube' : '';
@@ -44,11 +44,11 @@ function _smmaPagePopup()
 										$video_type = preg_match('/(https?:\/\/)?(www\.)?(player\.)?vimeo\.com\/([a-z]*\/)*([0-9]{6,11})[?]?.*/', $video_url) ? 'vimeo' : '';
 									endif;
 								?>
-								<div class="smma-iframe-body <?= $video_type ?>-embed smma-video-embed">
-									<?= smma_video_oembed_get($video_url, $video_type); ?>
+								<div class="cmma-iframe-body <?= $video_type ?>-embed cmma-video-embed">
+									<?= cmma_video_oembed_get($video_url, $video_type); ?>
 								</div>
 							<?php elseif ($video_file && !empty($video_file)) : ?>
-								<div class="smma-video-body smma-video-embed video-embed">
+								<div class="cmma-video-body cmma-video-embed video-embed">
 									<video muted autoplay loop>
 										<source src="<?= esc_url($video_file) ?>" type="video/mp4">
 									</video>
@@ -63,16 +63,16 @@ function _smmaPagePopup()
 		return  ob_get_clean();
 	}
 }
-add_shortcode('smma_page_popup', '_smmaPagePopup');
+add_shortcode('cmma_page_popup', '_cmmaPagePopup');
 
 
 
 // Function to display the shortcode in the footer
-function smma_page_popup_add_to_footer() {
+function cmma_page_popup_add_to_footer() {
     if (function_exists('do_shortcode')) {
-        echo do_shortcode('[smma_page_popup]');
+        echo do_shortcode('[cmma_page_popup]');
     }
 }
 
 // Hook the function to the wp_footer action
-add_action('wp_footer', 'smma_page_popup_add_to_footer');
+add_action('wp_footer', 'cmma_page_popup_add_to_footer');

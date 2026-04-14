@@ -1,0 +1,128 @@
+@import '../../../../css/config.scss';
+
+.accordion {
+	&-wrapper {
+
+		&.panel-wrapper {
+			display: block;
+		}
+
+		.accordion-inner {
+			max-width: 675px;
+			width: 100%;
+			margin-bottom: 65px;
+		}
+	}
+
+	&-items {
+		position: relative;
+		padding-left: 115px;
+
+		@include responsive(xl, true) {
+			padding-left: 0;
+		}
+	}
+
+	&-item {
+
+		&:first-child {
+			.accordion-item-title {
+				border-top: 0;
+			}
+		}
+
+		&:last-child {
+			.accordion-item-title {
+				border-bottom: 1px solid var(--theme-color-light-gray);
+
+				&.active {
+					border-bottom: 0;
+				}
+			}
+		}
+
+		&-title {
+			padding: 20px 30px 18px 0px;
+			border-top: 1px solid var(--theme-color-light-gray);
+			width: 52%;
+			font-weight: 500;
+			cursor: pointer;
+			position: relative;
+
+			@include responsive(md, true) {
+				width: 100%;
+			}
+
+			.accordion-icon {
+				position: absolute;
+				height: 2px;
+				width: 17px;
+				top: 15px;
+				right: 0;
+			}
+
+			&.active {
+				.accordion-icon {
+					transform: rotate(90deg);
+					top: 32px;
+					right: -18px;
+				}
+			}
+		}
+
+		&-content {
+			padding: 20px 0 20px 0;
+			display: none;
+
+			a:not(.animated-btn) {
+				text-decoration: underline;
+			}
+		}
+
+		&-left {
+			width: calc(52% - 150px);
+
+			@include responsive(lg, true) {
+				width: 52%;
+			}
+
+			@include responsive(md, true) {
+				width: 100%;
+			}
+		}
+
+		&-right {
+			position: absolute;
+			right: 0;
+			top: 0;
+			max-width: 435px;
+			width: 100%;
+			display: none;
+
+			@include responsive(md) {
+				height: 100%;
+
+				.accordion-item-image {
+					position: relative;
+					height: 100%;
+
+					// img {
+					// 	height: 100%;
+					// 	object-fit: cover;
+					// }
+				}
+			}
+
+
+			// img {
+			// 	width: 100%;
+			// 	height: auto;
+			// }
+
+			@include responsive(md, true) {
+				height: 0;
+				overflow: hidden;
+			}
+		}
+	}
+}

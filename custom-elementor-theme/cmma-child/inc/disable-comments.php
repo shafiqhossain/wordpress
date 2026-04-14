@@ -1,6 +1,6 @@
 <?php
-if (!class_exists('SmmaDisableComments')) {
-    class SmmaDisableComments {
+if (!class_exists('CmmaDisableComments')) {
+    class CmmaDisableComments {
 
         public function __construct() {
             add_action('pre_comment_on_post', [$this, 'disable_comment_submission']);
@@ -55,5 +55,5 @@ if (!class_exists('SmmaDisableComments')) {
     }
 
     // Initialize the class
-    new SmmaDisableComments();
+    new CmmaDisableComments();
 }

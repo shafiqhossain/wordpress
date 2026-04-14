@@ -20,7 +20,7 @@ if (count($parts) > 3 || !$job_id) {
 }
 
 
-$job = smma_get_jobs_data($job_id);
+$job = cmma_get_jobs_data($job_id);
 
 $jobSummaryContent = "";
 $content = $job['summary'];
@@ -45,42 +45,42 @@ $content = $doc->saveHTML();
 
 
 if ($job && count(array_keys($job))) {?>
-	<section class="smma-job-detials">
-		<div class="smma-container">
+	<section class="cmma-job-detials">
+		<div class="cmma-container">
 			<div class="panel-wrapper">
-				<div class="smma-job-detail-header panel-wrapper">
-					<div class="smma-job-detail-header-left">
+				<div class="cmma-job-detail-header panel-wrapper">
+					<div class="cmma-job-detail-header-left">
 						<h2><?= $job['title'];?></h2>
 						<p><?= $jobSummaryContent ?></p>
-						<a href="<?= site_url('open-positions');?>" class="smma-button smma-button-type-text">
-							<span class="smma-button-text">Open Positions</span>
-							<span class="smma-button-icon"><svg width="8" height="24" viewBox="0 0 8 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<a href="<?= site_url('open-positions');?>" class="cmma-button cmma-button-type-text">
+							<span class="cmma-button-text">Open Positions</span>
+							<span class="cmma-button-icon"><svg width="8" height="24" viewBox="0 0 8 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M0 18.0072L6.18055 13.484L0 8.99255V7L8 12.9147V14.085L0 20V18.0072Z" fill="currentColor"></path>
 							</svg></span>
 						</a>
 					</div>
-					<div class="smma-job-detail-header-right">
-						<div class="smma-job-detail-items">
+					<div class="cmma-job-detail-header-right">
+						<div class="cmma-job-detail-items">
 							<div class="label">Location</div>
 							<p><?= $job['location']; ?>, <?= $job['state']; ?></p>
 						</div>
 
 						<?php if ($job['remotetype']) { ?>
-							<div class="smma-job-detail-items">
+							<div class="cmma-job-detail-items">
 								<div class="label">Status</div>
 								<p><?= $job['remotetype']; ?></p>
 							</div>
 						<?php } ?>
 
 						<?php if ($job['department']) { ?>
-							<div class="smma-job-detail-items">
+							<div class="cmma-job-detail-items">
 								<div class="label">Expertise</div>
 								<p><?= $job['department']; ?></p>
 							</div>
 						<?php } ?>
 
 						<?php if ($job['priority']) { ?>
-							<div class="smma-job-detail-items">
+							<div class="cmma-job-detail-items">
 								<div class="label">Experience</div>
 								<p><?= $job['priority']; ?></p>
 							</div>

@@ -1,0 +1,84 @@
+@import '../../../../css/config.scss';
+
+.stats-panel {
+	position: relative;
+	padding-top: 200px;
+	padding-bottom: 200px;
+
+	@include responsive(lg, true) {
+		padding-top: 110px;
+		padding-bottom: 110px;
+	}
+
+	&-inner {
+		position: relative;
+	}
+
+	.slick-arrow {
+		position: absolute;
+		top: 6px;
+
+		&:focus-visible,
+		&:hover,
+		&:focus {
+			background: none;
+		}
+	}
+}
+
+.stats-list {
+	display: flex;
+	justify-content: flex-start;
+	position: relative;
+	gap: 32px;
+
+	@include responsive(lg, true) {
+		flex-wrap: wrap;
+	}
+
+	&-item {
+		width: calc(20% - 10px);
+
+		@include responsive(lg, true) {
+			width: 100%;
+		}
+
+		.stats-item-top {
+			display: flex;
+			align-items: flex-end;
+			justify-content: flex-start;
+			gap: 10px;
+			margin-bottom: 5px;
+
+			p {
+				margin: 0;
+				font-size: 16px;
+				max-width: none;
+				padding-bottom: 4px;
+			}
+
+			h2 {
+				margin: 0;
+			}
+		}
+
+		p {
+			max-width: 200px;
+			line-height: 1.2;
+		}
+	}
+
+	&.stats-slider {
+		justify-content: inherit;
+		padding-top: 15px;
+
+		.stats-list-item {
+			width: auto;
+			padding-right: 20px;
+		}
+
+		.slick-list {
+			width: 100%;
+		}
+	}
+}

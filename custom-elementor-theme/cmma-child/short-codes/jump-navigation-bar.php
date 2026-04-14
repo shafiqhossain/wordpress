@@ -4,10 +4,10 @@ function jumpNavigationBar() {
     $jump_navigation_bar = get_field('enable_jump_navigation_bar',get_queried_object_id());
     if ($jump_navigation_bar == 1) : ?>
         <div class="panel-wrapper-wrap">
-            <div class="smma-footer-jump-navigation">
-                <div class="smma-container">
-                    <div class="smma-footer-jump-navigation-wrapper">
-                        <div class="smma-footer-jump-navigation-heading">Jump to</div>
+            <div class="cmma-footer-jump-navigation">
+                <div class="cmma-container">
+                    <div class="cmma-footer-jump-navigation-wrapper">
+                        <div class="cmma-footer-jump-navigation-heading">Jump to</div>
                         <ul></ul>
                     </div>
                 </div>
@@ -16,8 +16,8 @@ function jumpNavigationBar() {
 
         <script type="text/javascript">
             jQuery(function () {
-                var jumpNavigation = jQuery('.smma-footer-jump-navigation ul');
-                jQuery('.smma-widget-jump-navigation').each(function (index) {
+                var jumpNavigation = jQuery('.cmma-footer-jump-navigation ul');
+                jQuery('.cmma-widget-jump-navigation').each(function (index) {
                     var parentId = jQuery(this).closest('[data-id]').data('id');
                     var textContent = jQuery(this).data('title') || jQuery(this).find('h2, h3, h4').filter(function() {
 						return jQuery(this).text().trim();
@@ -37,10 +37,10 @@ function jumpNavigationBar() {
                     jQuery(this).closest('li').addClass('scrolled');
                 });
 
-                jQuery('.smma-footer-jump-navigation').on('mouseleave', function () {
+                jQuery('.cmma-footer-jump-navigation').on('mouseleave', function () {
                     var liHeight = jQuery(this).find('li').outerHeight();
                     var activeLi = jQuery('li.scrolled').attr('data-id');
-                    jQuery('.smma-footer-jump-navigation ul').animate({
+                    jQuery('.cmma-footer-jump-navigation ul').animate({
                         scrollTop: (parseInt(activeLi) * liHeight)
                     }, 0);
                 });
@@ -57,7 +57,7 @@ function jumpNavigationBar() {
             function calculateLargeImageContentHeight(widgetClass) {
                 var $j = jQuery;
                 var $widget = $j(widgetClass);
-                var $content = $widget.find('.panel-collection .smma-collection-list');
+                var $content = $widget.find('.panel-collection .cmma-collection-list');
 
                 if ($content.length) {
                     $widget.find('.collection-panel-slider-item').css({'--large-image-content-height': $content.height() + 'px'});
@@ -65,13 +65,13 @@ function jumpNavigationBar() {
             }
 
             function updateProgressBar() {
-                const footerFixedLinks = document.querySelector('.smma-footer-jump-navigation');
+                const footerFixedLinks = document.querySelector('.cmma-footer-jump-navigation');
                 const totalHeight = document.body.scrollHeight - window.innerHeight;
                 const progress = (window.pageYOffset / totalHeight) * 100;
                 footerFixedLinks.style.setProperty('--progress-bar-width', progress + '%');
 
                 window.onload = function () {
-                    const footerWrapper = document.querySelector('.smma-footer-jump-navigation-wrapper');
+                    const footerWrapper = document.querySelector('.cmma-footer-jump-navigation-wrapper');
                     const footerLinks = footerWrapper.querySelector('ul');
                     const items = footerLinks.querySelectorAll('li');
                     if (items.length > 4) {
@@ -84,10 +84,10 @@ function jumpNavigationBar() {
             window.addEventListener('resize', updateProgressBar);
 
             //Default hide
-            let jumpNavigation = jQuery('.smma-footer-jump-navigation').closest('.elementor-element').parent('.elementor-element');
+            let jumpNavigation = jQuery('.cmma-footer-jump-navigation').closest('.elementor-element').parent('.elementor-element');
             jumpNavigation.hide();
             jQuery(window).scroll(function (event) {
-                let jumpItems = jQuery('.smma-footer-jump-navigation-wrapper>ul>li');
+                let jumpItems = jQuery('.cmma-footer-jump-navigation-wrapper>ul>li');
 				if (!jumpItems.length) {
 					return
 				}
@@ -115,4 +115,4 @@ function jumpNavigationBar() {
     endif;
     return ob_get_clean();
 }
-add_shortcode('smma_jump_navigation', 'jumpNavigationBar');
+add_shortcode('cmma_jump_navigation', 'jumpNavigationBar');

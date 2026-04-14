@@ -1,0 +1,72 @@
+.wysiwyg-text {
+
+	h1, h2, h3, h4, h5, h6, p:not(.contains-media), ul, ol {
+		max-width: 39rem;
+	}
+
+	img {
+		display: block;
+	}
+
+	a:not(.animated-btn) {
+		text-decoration: underline;
+	}
+
+	> p {
+		margin-bottom: 20px;
+
+		&.contains-media {
+			padding-top: 30px
+		}
+	}
+
+	ul,
+	ol {
+		padding: 15px 0 0 20px;
+		margin-bottom: 40px;
+
+		@include responsive(lg) {
+			margin-bottom: 35px;
+		}
+
+		li {
+			padding-bottom: 12px;
+			padding-inline-start: 10px;
+		}
+	}
+
+	ul {
+		list-style: none;
+		padding-left: 15px;
+
+		li::marker {
+			content: '\2014';
+		}
+	}
+
+	figure {
+		padding: 28px 0;
+
+		>img {
+			width: auto;
+			height: auto;
+			max-width: 100%;
+		}
+
+		figcaption {
+			margin: 15px 0 20px;
+
+			@include responsive(lg) {
+				margin: 20px 0;
+			}
+		}
+	}
+
+	.wp-video {
+		padding-top: 30px;
+
+		.video-iframe:before {
+			display: none;
+		}
+	}
+}

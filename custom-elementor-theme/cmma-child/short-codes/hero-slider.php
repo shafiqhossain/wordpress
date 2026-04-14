@@ -11,8 +11,8 @@ function _heroSliderShortCode($atts) {
             'dots'          => false,
             'infinite'      => true,
 			'pauseOnHover'  => false,
-            'prevArrow'     => '<a href="javascript:void(0);" class="prev-btn">' . smma_elementor_icons('arrow', 'currentColor') . '</button>',
-            'nextArrow'     => '<a href="javascript:void(0);" class="next-btn">' . smma_elementor_icons('arrow', 'currentColor') . '</button>',
+            'prevArrow'     => '<a href="javascript:void(0);" class="prev-btn">' . cmma_elementor_icons('arrow', 'currentColor') . '</button>',
+            'nextArrow'     => '<a href="javascript:void(0);" class="next-btn">' . cmma_elementor_icons('arrow', 'currentColor') . '</button>',
         ];
 		if ($autoplay_option) {
 			$slick_settings['autoplay'] = true;
@@ -22,12 +22,12 @@ function _heroSliderShortCode($atts) {
         ?>
 
         <div class="single-hero-slider">
-            <div class="<?php if ($count > 1) : ?> smma-page-slideshow <?php endif; ?>" <?php if ($count > 1) : ?> data-slick="<?= htmlspecialchars(json_encode($slick_settings)); ?>" <?php endif; ?>>
+            <div class="<?php if ($count > 1) : ?> cmma-page-slideshow <?php endif; ?>" <?php if ($count > 1) : ?> data-slick="<?= htmlspecialchars(json_encode($slick_settings)); ?>" <?php endif; ?>>
                 <?php foreach ($slider as $key => $slide) :
                     $image_id         	= $slide['image'];
-                    $image_info       	= smma_elementor_widgets_get_responsive_image_data($image_id, 'full');
+                    $image_info       	= cmma_elementor_widgets_get_responsive_image_data($image_id, 'full');
                     $mobile_image_id  	= $slide['mobile_image'];
-                    $mobile_image_info	= smma_elementor_widgets_get_responsive_image_data($mobile_image_id, 'full');
+                    $mobile_image_info	= cmma_elementor_widgets_get_responsive_image_data($mobile_image_id, 'full');
                     $caption			= $slide['caption'];
                     $link				= isset($slide['link']) ? $slide['link'] : null;
 
@@ -41,14 +41,14 @@ function _heroSliderShortCode($atts) {
                                         $video_type = preg_match('/(https?:\/\/)?(www\.)?(player\.)?vimeo\.com\/([a-z]*\/)*([0-9]{6,11})[?]?.*/', $slide['video_link']) ? 'vimeo' : '';
                                     endif;
                                     ?>
-                                    <div class="smma-slide-iframe <?= $video_type ?>-embed smma-video-embed">
-										<div id="smma-video-replay-btn" class="smma-video-replay-btn">
-											<?= smma_elementor_icons( 'replay', 'currentColor' ); ?>
+                                    <div class="cmma-slide-iframe <?= $video_type ?>-embed cmma-video-embed">
+										<div id="cmma-video-replay-btn" class="cmma-video-replay-btn">
+											<?= cmma_elementor_icons( 'replay', 'currentColor' ); ?>
 										</div>
-                                        <?= smma_video_oembed_get($slide['video_link'], $video_type); ?>
+                                        <?= cmma_video_oembed_get($slide['video_link'], $video_type); ?>
                                     </div>
                                 <?php elseif (!empty($slide['upload_video'])) : ?>
-                                    <div class="smma-slide-video smma-video-embed video-embed">
+                                    <div class="cmma-slide-video cmma-video-embed video-embed">
                                         <video muted autoplay loop>
                                             <source src="<?= esc_url($slide['upload_video']) ?>" type="video/mp4">
                                         </video>
@@ -56,11 +56,11 @@ function _heroSliderShortCode($atts) {
                                 <?php endif;
                             } else {
                                 if (isset($mobile_image_info) && !empty($mobile_image_info['srcset'])) : ?>
-                                    <div class="smma-slide-img mobile-image">
+                                    <div class="cmma-slide-img mobile-image">
                                         <img srcset="<?= esc_attr($mobile_image_info['srcset']) ?>" src="<?= esc_url($mobile_image_info['url']) ?>" loading="lazy" height="100%" width="100%" alt="" />
                                     </div>
                                 <?php endif; ?>
-                                <div class="smma-slide-img desktop-img">
+                                <div class="cmma-slide-img desktop-img">
                                     <img srcset="<?= esc_attr($image_info['srcset']) ?>" src="<?= esc_url($image_info['url']) ?>" loading="lazy" height="100%" width="100%" alt="" />
                                 </div>
                             <?php } ?>
@@ -73,4 +73,4 @@ function _heroSliderShortCode($atts) {
     <?php }
     return ob_get_clean();
 }
-add_shortcode('smma_hero_slider', '_heroSliderShortCode');
+add_shortcode('cmma_hero_slider', '_heroSliderShortCode');

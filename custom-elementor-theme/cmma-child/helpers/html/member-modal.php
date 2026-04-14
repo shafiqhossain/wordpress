@@ -3,13 +3,13 @@
 	$image_id = get_post_thumbnail_id($postID);
 	$custom_fields = get_fields($postID);
 	$post_content = get_post_field('post_content', $postID);
-	$image_info = smma_elementor_widgets_get_responsive_image_data($image_id, 'full');
+	$image_info = cmma_elementor_widgets_get_responsive_image_data($image_id, 'full');
 ?>
 <div class="overlay"></div>
-<div id="smma-modal-<?= $postID ?>" class="modal widget-modal smma-modal-show single-perspective">
-	<div class="smma-author-modal smma-modal-content color-scheme-dark">
-		<div class="smma-show-more-info">
-			<span class="smma-modal-close close" data-modal-id="smma-modal-<?= $postID ?>"><?= smma_elementor_icons('minus', 'currentColor'); ?></span>
+<div id="cmma-modal-<?= $postID ?>" class="modal widget-modal cmma-modal-show single-perspective">
+	<div class="cmma-author-modal cmma-modal-content color-scheme-dark">
+		<div class="cmma-show-more-info">
+			<span class="cmma-modal-close close" data-modal-id="cmma-modal-<?= $postID ?>"><?= cmma_elementor_icons('minus', 'currentColor'); ?></span>
 		</div>
 		<div class="modal-head">
 			<h2><?= $custom_fields['first_name']; ?> <?= $custom_fields['last_name']; ?></h2>
@@ -50,7 +50,7 @@
 			<?php endif; ?>
 
 			<?php if ($custom_fields['slider_image'] && count($custom_fields['slider_image'])): ?>
-				<div class="smma-people-slider <?= esc_attr($custom_fields['hide_slider'] ? 'hide' : ''); ?>">
+				<div class="cmma-people-slider <?= esc_attr($custom_fields['hide_slider'] ? 'hide' : ''); ?>">
 					<h6><?= esc_html($custom_fields['slider-title']); ?></h6>
 					<?php
 					$slick_settings = [
@@ -59,12 +59,12 @@
 						'infinite'      => true,
 						'autoplay'      => true,
 						'autoplaySpeed' => 3000,
-						'prevArrow'     => '<a href="javascript:void(0);" class="smma-prev-btn">' . smma_elementor_icons('arrow', 'currentColor') . '</a>',
-						'nextArrow'     => '<a href="javascript:void(0);" class="smma-next-btn">' . smma_elementor_icons('arrow', 'currentColor') . '</a>',
+						'prevArrow'     => '<a href="javascript:void(0);" class="cmma-prev-btn">' . cmma_elementor_icons('arrow', 'currentColor') . '</a>',
+						'nextArrow'     => '<a href="javascript:void(0);" class="cmma-next-btn">' . cmma_elementor_icons('arrow', 'currentColor') . '</a>',
 					];
 					?>
 
-					<div class="smma-people-slider-wrapper" data-slick="<?= esc_attr(json_encode($slick_settings)); ?>">
+					<div class="cmma-people-slider-wrapper" data-slick="<?= esc_attr(json_encode($slick_settings)); ?>">
 						<?php foreach ($custom_fields['slider_image'] as $key => $image) { ?>
 							<div class="slide-item">
 								<a href="<?php the_sub_field('slider_link'); ?>" target="_blank">

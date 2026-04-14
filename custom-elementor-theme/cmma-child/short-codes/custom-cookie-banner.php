@@ -1,6 +1,6 @@
 <?php
 
-function smmaCookieBannerShortCode() {
+function cmmaCookieBannerShortCode() {
     // Check for the cookie on the server side
     if (!isset($_COOKIE['wp-settings-cookie-accepted'])) {
         ob_start();
@@ -13,10 +13,10 @@ function smmaCookieBannerShortCode() {
     }
     return ''; // Return empty string if cookie is already set
 }
-add_shortcode('smma_cookie_banner', 'smmaCookieBannerShortCode');
+add_shortcode('cmma_cookie_banner', 'cmmaCookieBannerShortCode');
 
 // Automatically add the shortcode to the footer
 function add_cookie_banner_to_footer() {
-    echo do_shortcode('[smma_cookie_banner]');
+    echo do_shortcode('[cmma_cookie_banner]');
 }
 add_action('wp_footer', 'add_cookie_banner_to_footer');

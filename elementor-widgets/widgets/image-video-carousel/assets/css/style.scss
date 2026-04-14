@@ -1,0 +1,98 @@
+@import '../../../../css/config.scss';
+
+.image-video-wrapper {
+	display: block;
+	overflow: hidden;
+
+	.cmma {
+		&-carousel-wrapper {
+			position: relative;
+			overflow: visible;
+			padding: 32px 90px 0;
+			margin-top: 0px;
+
+			@include responsive(lg, true) {
+				padding-left: 70px;
+				padding-right: 70px;
+				margin: 0 -15px;
+			}
+
+			@include responsive(md, true) {
+				padding: 40px 0px 0;
+				margin-top: 12px;
+				margin: 0;
+			}
+		}
+
+		&-carousel {
+			position: static;
+
+			.slick-list {
+				overflow: visible;
+			}
+			.cmma-video-embed{
+				iframe{
+					scale: unset;
+    				margin-top: 0;
+					height: 100%;
+					width: 100%;
+					transform: none;
+					top: 0;
+					left: 0;
+				}
+			}
+			.youtube-embed{
+				&.cmma-video-embed{
+					overflow: hidden;
+					iframe {
+						width: 180%;
+						height: 130%;
+						left: -40%;
+						max-width: none;
+						top: -50px;
+						pointer-events: none;
+					}
+				}
+			}
+		}
+
+		&-slide {
+			padding: 0 15px;
+			position: relative;
+
+			@include responsive(lg, true) {
+				padding-left: 6px;
+				padding-right: 6px;
+			}
+
+			&-caption {
+				padding-top: 20px;
+			}
+		}
+		&-slide-inner {
+			&:hover {
+				p {
+					font-style: italic;
+				}
+			}
+		}
+	}
+
+	.panel-inner {
+		max-width: 790px;
+	}
+	.panel-content-description {
+		max-width: 660px;
+	}
+}
+
+.project-panel-slider-inner, .cmma-carousel {
+	.slick-arrow.cmma-prev-btn {
+		top: 0;
+	}
+	.slick-arrow.cmma-next-btn {
+		top: 0;
+	}
+}
+
+
