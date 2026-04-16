@@ -1,0 +1,5 @@
+div.stock-info mark.outofstock {
+  background: #fff;
+  color: #a44;
+  font-weight: bold;
+}

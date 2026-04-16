@@ -1,0 +1,272 @@
+.calculator-section {padding-top: 0;padding-bottom: 0;}
+.calculator-header-container {
+  text-align:center;
+  background: #f5be31;
+  padding: 15px 15px;
+}
+
+.calculator-container {
+  background: #c0e1df;
+}
+
+.hotel-cost-calculator-wrapper {
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: 0 auto;
+}
+@media (max-width: 1199.98px) { 
+  .hotel-cost-calculator-wrapper {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+@media (max-width: 991.98px) {  
+  .hotel-cost-calculator-wrapper {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+@media (max-width: 767.98px) {  
+  .hotel-cost-calculator-wrapper {
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+@media (max-width: 575.98px) {
+  .hotel-cost-calculator-wrapper {
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+.hotel-outer-border {border: 2px solid #ccc;padding: 5px 10px;}
+.hotel-cost-calculator-wrapper .top_desc {margin-bottom:10px;}
+
+.hotel-cost-calculator-form .calculator-title {
+  font-size: 30px;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.hotel-cost-calculator-list {width: 100%;border:0;}
+@media (max-width: 1199.98px) { 
+  .hotel-cost-calculator-list {width: 100%;}
+}
+@media (max-width: 991.98px) {  
+  .hotel-cost-calculator-list {width: 95%;}
+}
+@media (max-width: 767.98px) {  
+  .hotel-cost-calculator-list {width: 100%;}
+}
+@media (max-width: 575.98px) {
+  .hotel-cost-calculator-list {width: 100%;}
+}
+.hotel-cost-calculator-list .row-image {text-align:center;padding-bottom:20px;padding-top:20px;}
+
+.hotel-cost-calculator-list tr.row-days,
+.hotel-cost-calculator-list tr.row-average,
+.hotel-cost-calculator-list tr.row-expenditure,
+.hotel-cost-calculator-list tr.row-savings {
+  border-bottom: 3px solid #71c6d3;
+}
+
+.hotel-cost-calculator-list th,
+.hotel-cost-calculator-list td {border: 0;}
+.hotel-cost-calculator-list th {width: 60%;}
+@media (max-width: 1199.98px) { 
+  .hotel-cost-calculator-list th {width: 60%;}
+}
+@media (max-width: 991.98px) {  
+  .hotel-cost-calculator-list th {width: 60%;}
+}
+@media (max-width: 767.98px) {  
+  .hotel-cost-calculator-list th {width: 60%;}
+}
+@media (max-width: 575.98px) {
+  .hotel-cost-calculator-list th {width: 55%;}
+}
+
+.hotel-cost-calculator-list td {width: 40%;text-align:right;padding-top: 7px;padding-bottom: 7px;}
+@media (max-width: 1199.98px) { 
+  .hotel-cost-calculator-list td {width: 40%;}
+}
+@media (max-width: 991.98px) {  
+  .hotel-cost-calculator-list td {width: 40%;}
+}
+@media (max-width: 767.98px) {  
+  .hotel-cost-calculator-list td {width: 40%;}
+}
+@media (max-width: 575.98px) {
+  .hotel-cost-calculator-list td {width: 45%;}
+}
+
+.hotel-cost-calculator-list td span {display: inline-block;}
+.hotel-cost-calculator-list td span.currency {
+  max-width: 60px;
+  font-size: 26px;
+  font-weight: 800;
+  padding-right: 5px;
+  color: #00b200;
+}
+@media (max-width: 1199.98px) { 
+  .hotel-cost-calculator-list td span.currency {
+    max-width: 60px;
+    font-size: 26px;
+  }
+}
+@media (max-width: 991.98px) {  
+  .hotel-cost-calculator-list td span.currency {
+    max-width: 60px;
+    font-size: 26px;
+  }
+}
+@media (max-width: 767.98px) {  
+  .hotel-cost-calculator-list td span.currency {
+    max-width: 50px;
+    font-size: 20px;
+  }
+}
+@media (max-width: 575.98px) {
+  .hotel-cost-calculator-list td span.currency {
+    max-width: 50px;
+    font-size: 16px;
+  }
+}
+
+.hotel-cost-calculator-list td span.input {max-width: 155px;}
+@media (max-width: 1199.98px) { 
+  .hotel-cost-calculator-list td span.input {max-width: 150px;}
+}
+@media (max-width: 991.98px) {  
+  .hotel-cost-calculator-list td span.input {max-width: 140px;}
+}
+@media (max-width: 767.98px) {  
+  .hotel-cost-calculator-list td span.input {max-width: 130px;}
+}
+@media (max-width: 575.98px) {
+  .hotel-cost-calculator-list td span.input {max-width: 130px;}
+}
+@media (max-width: 320px) {
+  .hotel-cost-calculator-list td span.input {max-width: 100px;}
+}
+
+.hotel-cost-calculator-list .row-label {font-weight: 800;font-size: 20px;}
+@media (max-width: 1199.98px) { 
+  .hotel-cost-calculator-list .row-label {font-size: 20px;}
+}
+@media (max-width: 991.98px) {  
+  .hotel-cost-calculator-list .row-label {font-size: 20px;}
+}
+@media (max-width: 767.98px) {  
+  .hotel-cost-calculator-list .row-label {font-size: 18px;}
+}
+@media (max-width: 575.98px) {
+  .hotel-cost-calculator-list .row-label {font-size: 16px;}
+}
+
+.hotel-cost-calculator-list .row-value-days input,
+.hotel-cost-calculator-list .row-value-average input {
+  font-size: 26px;
+  font-weight: 800;
+  text-align: right;
+  padding: 0.8rem 1.2rem;
+  color: #00b200;
+}
+@media (max-width: 1199.98px) { 
+  .hotel-cost-calculator-list .row-value-days input,
+  .hotel-cost-calculator-list .row-value-average input {
+    font-size: 26px;
+  }
+}
+@media (max-width: 991.98px) {  
+  .hotel-cost-calculator-list .row-value-days input,
+  .hotel-cost-calculator-list .row-value-average input {
+    font-size: 26px;
+  }
+}
+@media (max-width: 767.98px) {  
+  .hotel-cost-calculator-list .row-value-days input,
+  .hotel-cost-calculator-list .row-value-average input {
+    font-size: 24px;
+  }
+}
+@media (max-width: 575.98px) {
+  .hotel-cost-calculator-list .row-value-days input,
+  .hotel-cost-calculator-list .row-value-average input {
+    font-size: 24px;
+    /*padding: 0.6rem 0.6rem;*/
+  }
+}
+.hotel-cost-calculator-list .row-value-expenditure input,
+.hotel-cost-calculator-list .row-value-savings input,
+.hotel-cost-calculator-list .row-value-net input {
+  border: 0;
+  background: none;
+  font-size: 26px;
+  font-weight: 800;
+  text-align: right;
+  padding: 0.8rem 1.2rem;
+  padding-left: 0.6rem;
+  color: #00b200;
+}
+@media (max-width: 1199.98px) { 
+  .hotel-cost-calculator-list .row-value-expenditure input,
+  .hotel-cost-calculator-list .row-value-savings input,
+  .hotel-cost-calculator-list .row-value-net input {
+    font-size: 26px;
+  }
+}
+@media (max-width: 991.98px) {  
+  .hotel-cost-calculator-list .row-value-expenditure input,
+  .hotel-cost-calculator-list .row-value-savings input,
+  .hotel-cost-calculator-list .row-value-net input {
+    font-size: 26px;
+  }
+}
+@media (max-width: 767.98px) {  
+  .hotel-cost-calculator-list .row-value-expenditure input,
+  .hotel-cost-calculator-list .row-value-savings input,
+  .hotel-cost-calculator-list .row-value-net input {
+    font-size: 26px;
+  }
+}
+@media (max-width: 575.98px) {
+  .hotel-cost-calculator-list .row-value-expenditure input,
+  .hotel-cost-calculator-list .row-value-savings input,
+  .hotel-cost-calculator-list .row-value-net input {
+    font-size: 24px;
+  }
+}
+.hotel-cost-calculator-list .row-label-savings,
+.hotel-cost-calculator-list .row-value-savings input,
+.hotel-cost-calculator-list .row-value-savings span.currency {
+  color: #00b200;
+}
+
+.hotel-cost-calculator-list .row-value-days input:focus,
+.hotel-cost-calculator-list .row-value-average input:focus {
+  border: 1px solid #ccc;
+}
+
+.hotel-cost-calculator-list .row-value-expenditure input:focus,
+.hotel-cost-calculator-list .row-value-savings input:focus,
+.hotel-cost-calculator-list .row-value-net input:focus {
+  outline: none;
+}
+
+.hotel-cost-calculator-wrapper .bottom_desc {margin-bottom:10px;}
+.hotel-inner-border {border: 2px solid #ccc;}
+.hotel-outer-divider {border: 2px solid #ccc;margin-top: 10px;margin-bottom:10px;}
+.hotel-inner-divider {border: 2px solid #ccc;margin-top: 10px;margin-bottom:10px;}
+

@@ -1,0 +1,471 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+body {
+  /*background-color: #fff !important;*/
+}
+
+.fac-directory-contents {/*max-width:1170px !important;*/}
+.fac-directory-contents .online-directory {
+    font-weight: 400;
+    font-size: 32px;
+    color: black;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    line-height: 51.2px;
+    margin: 5px 0;
+}
+.directory-hr {
+    border: 0;
+    border-top: 1px solid #eeeeee;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.fac-directory-contents .search-header-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 23.2px;
+    text-transform: uppercase;
+    line-height: 51.2px;
+    margin: 5px 0;
+    margin-bottom: 25px;
+    font-weight: 400;
+    color: #56585d;
+}
+.fac-directory-contents .directory-main-search {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    background: #527880;
+    padding: 15px;
+}
+
+.fac-directory-contents .search-keywords-wrapper .keyword-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: left;
+    margin-bottom: 15px;
+
+}
+@media (max-width: 575.98px) {
+    .fac-directory-contents .search-keywords-wrapper .keyword-wrapper {
+        flex-flow: column wrap;
+    }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .fac-directory-contents .search-keywords-wrapper .keyword-wrapper {
+        flex-flow: column wrap;
+    }
+}
+
+.fac-directory-contents .search-keywords-wrapper .keyword-wrapper .keyword-textfield-wrapper {
+  flex-grow: 1;
+}
+@media (max-width: 575.98px) {
+    .fac-directory-contents .search-keywords-wrapper .keyword-wrapper .keyword-textfield-wrapper {
+
+    }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .fac-directory-contents .search-keywords-wrapper .keyword-wrapper .keyword-textfield-wrapper {
+
+    }
+}
+.fac-directory-contents .search-keywords-wrapper .keyword-wrapper .keyword-textfield-wrapper .header-title {
+    color: white;
+    font-size: 18.4px;
+    margin-bottom: 15px;
+}
+.fac-directory-contents .search-keywords-wrapper .keyword-wrapper .keyword-textfield-wrapper .advanced-text-input {
+    width: 100%;
+    height: 34px;
+    border: 1px solid white;
+    background: transparent;
+    padding: 20px 10px;
+    color: white;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    box-sizing: border-box;
+    outline: none;
+}
+.fac-directory-contents .search-keywords-wrapper .keyword-wrapper .keyword-textfield-wrapper .advanced-text-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #bfcdd0;
+    opacity: 1; /* Firefox */
+}
+.fac-directory-contents .search-keywords-wrapper .keyword-wrapper .keyword-textfield-wrapper .advanced-text-input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #bfcdd0;
+}
+.fac-directory-contents .search-keywords-wrapper .keyword-wrapper .keyword-textfield-wrapper .advanced-text-input::-ms-input-placeholder { /* Microsoft Edge */
+    color: #bfcdd0;
+}
+
+.fac-directory-contents .search-keywords-wrapper .keyword-wrapper .action-button-wrapper {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-end;
+}
+@media (max-width: 575.98px) {
+    .fac-directory-contents .search-keywords-wrapper .keyword-wrapper .action-button-wrapper {
+        justify-content: flex-start;
+        margin-top: 15px;
+    }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .fac-directory-contents .search-keywords-wrapper .keyword-wrapper .action-button-wrapper {
+        justify-content: flex-start;
+        margin-top: 15px;
+    }
+}
+.fac-directory-contents .search-keywords-wrapper .keyword-wrapper .action-button-wrapper .search-button {
+    -webkit-appearance: button;
+    cursor: pointer;
+    padding: 5px 30px;
+    background: transparent;
+    box-shadow: none;
+    border: 1px solid white;
+    color: white;
+    opacity: 1;
+    transition: opacity ease-in .25s;
+    margin-left: 20px;
+}
+@media (max-width: 575.98px) {
+    .fac-directory-contents .search-keywords-wrapper .keyword-wrapper .action-button-wrapper .search-button {
+        margin-left: 0;
+        align-self: flex-start;
+    }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .fac-directory-contents .search-keywords-wrapper .keyword-wrapper .action-button-wrapper .search-button {
+        margin-left: 0;
+        align-self: flex-start;
+    }
+}
+
+
+.fac-directory-contents .county-and-job-search-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: left;
+}
+@media (max-width: 575.98px) {
+    .fac-directory-contents .county-and-job-search-wrapper {
+        flex-flow: column wrap;
+    }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .fac-directory-contents .county-and-job-search-wrapper {
+        flex-flow: column wrap;
+    }
+}
+.fac-directory-contents .county-and-job-search-wrapper .county-search-wrapper {
+    flex-grow: 1;
+    width: 50%;
+    padding-right: 21px;
+}
+@media (max-width: 575.98px) {
+    .fac-directory-contents .county-and-job-search-wrapper .county-search-wrapper {
+        width: 100%;
+        padding-right: 0;
+    }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .fac-directory-contents .county-and-job-search-wrapper .county-search-wrapper {
+        width: 100%;
+        padding-right: 0;
+    }
+}
+.fac-directory-contents .county-and-job-search-wrapper .county-search-wrapper .header-title {
+  display: none;
+}
+.fac-directory-contents .county-and-job-search-wrapper .county-filter-wrapper {
+    position: relative;
+}
+.fac-directory-contents .county-and-job-search-wrapper .county-filter-wrapper::after {
+    content: '';
+    position: absolute;
+    right: 6px;
+    top: 16px;
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 12px solid #527880;
+    pointer-events: none;
+}
+.fac-directory-contents .county-and-job-search-wrapper .county-search-wrapper .county-search-dropdown {
+    width: 100%;
+    max-width: 100%;
+    border: 1px solid #527880;
+    height: 40px;
+    padding: 0 10px;
+    font-size: 13px;
+    line-height: 1;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 0;
+    font-weight: 600;
+    outline: none;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.fac-directory-contents .county-and-job-search-wrapper .county-search-wrapper .county-search-dropdown::-ms-expand {
+    display: none;
+}
+.fac-directory-contents .county-and-job-search-wrapper .job-search-wrapper {
+    flex-grow: 1;
+    width: 50%;
+}
+@media (max-width: 575.98px) {
+    .fac-directory-contents .county-and-job-search-wrapper .job-search-wrapper {
+        width: 100%;
+        margin-top: 15px;
+    }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .fac-directory-contents .county-and-job-search-wrapper .job-search-wrapper {
+        width: 100%;
+        margin-top: 15px;
+    }
+}
+.fac-directory-contents .county-and-job-search-wrapper .job-search-wrapper .header-title {
+    display: none;
+}
+.fac-directory-contents .county-and-job-search-wrapper .job-filter-wrapper {
+    position: relative;
+}
+.fac-directory-contents .county-and-job-search-wrapper .job-filter-wrapper::after {
+    content: '';
+    position: absolute;
+    right: 6px;
+    top: 16px;
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 12px solid #527880;
+    pointer-events: none;
+}
+.fac-directory-contents .county-and-job-search-wrapper .job-search-wrapper .job-search-dropdown {
+    width: 100%;
+    max-width: 100%;
+    border: 1px solid #527880;
+    height: 40px;
+    outline: none;
+    padding: 0 10px;
+    font-size: 13px;
+    line-height: 1;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 0;
+    font-weight: 600;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.fac-directory-contents .county-and-job-search-wrapper .county-search-wrapper .job-search-dropdown::-ms-expand {
+    display: none;
+}
+.fac-directory-contents  .counties-list {
+    background: #527880;
+    width: 100%;
+    margin-bottom: 50px;
+    padding: 15px 30px;
+}
+
+.fac-directory-contents  .counties-list ul.counties {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    list-style: none;
+    padding: 0;
+}
+@media (max-width: 575.98px) {
+    .fac-directory-contents  .counties-list ul.counties {
+        columns: 1;
+        -webkit-columns: 1;
+        -moz-columns: 1;
+    }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .fac-directory-contents  .counties-list ul.counties {
+        columns: 1;
+        -webkit-columns: 1;
+        -moz-columns: 1;
+    }
+}
+
+#main .fac-directory-contents .counties-list ul.counties li::before {
+    content: "";
+    float: none;
+    padding-right: 0;
+    display: inline-block;
+}
+
+.fac-directory-contents  .counties-list ul.counties li a {
+    color: white;
+    font-size: 18.4px;
+    line-height: 32.2px;
+    opacity: 1;
+    transition: opacity ease-in .25s;
+    text-decoration: underline;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    background: none;
+}
+
+#main .fac-directory-contents  .counties-list ul.counties li a:hover,
+#main .fac-directory-contents  .counties-list ul.counties li a:focus,
+#main .fac-directory-contents  .counties-list ul.counties li a:active {
+    opacity: 0.6;
+    color: #fff;
+    background: none;
+    outline: none;
+}
+
+/* Search Resutls */
+.fac-directory-contents .fac-directory-search-results-wrapper {
+    color: #363636;
+    background: #ebecec;
+    padding: 0 15px;
+    font-family: 'Oswald', sans-serif;
+}
+.fac-directory-contents .fac-directory-search-results-wrapper .search-results-headline {
+    border-bottom: 1px solid black;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    padding-top: 25px;
+    color: #527880;
+    font-family: 'Oswald', sans-serif;
+}
+.fac-directory-contents .fac-directory-search-results-wrapper .dirType1 {
+    padding-bottom: 25px;
+    border-bottom: 1px solid #9c9c9d;
+    margin-bottom: 25px;
+    font-family: 'Oswald', sans-serif;
+}
+.fac-directory-contents .fac-directory-search-results-wrapper .dirResultsBox {
+    font-size: 14px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: left;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+}
+@media (max-width: 575.98px) {
+    .fac-directory-contents .fac-directory-search-results-wrapper .dirResultsBox {
+        flex-flow: column wrap;
+    }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .fac-directory-contents .fac-directory-search-results-wrapper .dirResultsBox {
+        flex-flow: column wrap;
+    }
+}
+.fac-directory-contents .fac-directory-search-results-wrapper .dirResultsBox .dirEntryTitle {
+    flex-grow: 1;
+    padding-right: 15px;
+}
+.fac-directory-contents .fac-directory-search-results-wrapper .dirResultsBox .dirEntryTitle img {
+    width: 100px;
+    height: auto;
+    max-width: 100px;
+}
+@media (max-width: 575.98px) {
+    .fac-directory-contents .fac-directory-search-results-wrapper .dirResultsBox .dirEntryTitle img {
+        /*width: 100%;*/
+        max-width: 100px;
+    }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .fac-directory-contents .fac-directory-search-results-wrapper .dirResultsBox .dirEntryTitle img {
+        /*width: 100%;*/
+        max-width: 100px;
+    }
+}
+.fac-directory-contents .fac-directory-search-results-wrapper .dirResultsBox .dirEntryCounty {
+    flex-grow: 1;
+    width: 17%;
+    padding-right: 15px;
+}
+@media (max-width: 575.98px) {
+    .fac-directory-contents .fac-directory-search-results-wrapper .dirResultsBox .dirEntryCounty {
+        width: 100%;
+    }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .fac-directory-contents .fac-directory-search-results-wrapper .dirResultsBox .dirEntryCounty {
+        width: 100%;
+    }
+}
+.fac-directory-contents .fac-directory-search-results-wrapper .dirResultsBox .dirEntryCounty .dirEntryName {
+    color: #0076a3;
+}
+.fac-directory-contents .fac-directory-search-results-wrapper .dirResultsBox .dirEntryAddress {
+    flex-grow: 1;
+    width: 22%;
+    padding-right: 15px;
+}
+@media (max-width: 575.98px) {
+    .fac-directory-contents .fac-directory-search-results-wrapper .dirResultsBox .dirEntryAddress {
+        width: 100%;
+    }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .fac-directory-contents .fac-directory-search-results-wrapper .dirResultsBox .dirEntryAddress {
+        width: 100%;
+    }
+}
+.fac-directory-contents .fac-directory-search-results-wrapper .dirResultsBox .dirEntryPhone {
+    flex-grow: 1;
+    width: 30%;
+    padding-right: 15px;
+}
+@media (max-width: 575.98px) {
+    .fac-directory-contents .fac-directory-search-results-wrapper .dirResultsBox .dirEntryPhone {
+        width: 100%;
+    }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .fac-directory-contents .fac-directory-search-results-wrapper .dirResultsBox .dirEntryPhone {
+        width: 100%;
+    }
+}
+.fac-directory-contents .fac-directory-search-results-wrapper .dirResultsBox .dirEntryPhone .dirEmail a.emailLink {
+    color: #0076a3;
+    transition: color ease-in .25s;
+    text-decoration: underline;
+}
+.fac-directory-contents .fac-directory-search-results-wrapper .dirResultsBox .dirEntryPhone .dirEmail a.emailLink:focus {
+    background: none;
+}
+.fac-directory-contents .fac-directory-search-results-wrapper .fac-profile-pagination {
+  padding-bottom: 20px;
+}
+.fac-directory-contents .fac-directory-search-results-wrapper .fac-profile-pagination span:first-child {
+  margin-right: 10px;
+}
+.fac-directory-contents .fac-directory-search-results-wrapper .fac-profile-pagination span:first-child::after {
+    content: " | ";
+    margin-left: 10px;
+}
+.fac-directory-contents .fac-directory-search-results-wrapper .fac-profile-pagination .page-numbers {
+  margin-right: 5px;
+}
+.fac-directory-contents .fac-directory-search-results-wrapper .fac-profile-pagination .page-numbers.current {
+  border: 1px solid #0076a3;
+  padding: 1px 8px;
+  color: #fff;
+  background: #0076a3;
+}
+.fac-directory-contents .fac-directory-search-results-wrapper .fac-profile-pagination .page-numbers.next {
+  font-size: 24px;
+}
+.fac-directory-contents .fac-directory-search-results-wrapper .fac-profile-pagination .page-numbers.prev {
+  font-size: 24px;
+}
+
+
