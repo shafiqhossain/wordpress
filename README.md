@@ -21,7 +21,7 @@ A custom elementor theme converted from Figma design.
 4. Custom Elementor Widgets
 
 https://github.com/shafiqhossain/wordpress/tree/main/elementor-widgets
-Custom elementor widgets based on Figma Design.
+Custom elementor widgets based on Figma Design. Inside the widget folder, there are 28 widgets.
 
 
 5. Customize LearnDash LMS system
@@ -59,6 +59,20 @@ https://github.com/shafiqhossain/wordpress/tree/main/woocommerce-stash-admin-rep
 11. Bus Tour, Stop, Schedule plugin
 
 https://github.com/shafiqhossain/wordpress/tree/main/lakeland-bus-lines-plugins
-Plugins code to create schedule, stop and tour for Buses for both backend and frontend.
+Plugins code to create schedule, stop and tour for Buses for both backend and frontend. Three plugins there.
 
+12. Subscription plugin / CRUD Operation
+
+https://github.com/shafiqhossain/wordpress/tree/main/crud-maxstamp-subscriber-plugin
+Create/Update/Delete and display subscription in backend and front end.
+
+13. Gutenberg Blocks with React (5 Blocks)
+
+https://github.com/shafiqhossain/wordpress/tree/main/smma-gutenberg-blocks-with-react
+-Callback Action Block
+-Dashboard Status
+-Newsletter subscription
+-Recent Projects
+-Subscribe now
+-Testimonials
 
