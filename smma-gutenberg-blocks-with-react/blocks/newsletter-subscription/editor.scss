@@ -1,0 +1,21 @@
+/**
+ * Newsletter Subscription block — editor-only styles.
+ */
+
+.smma-newsletter {
+	&__form--preview {
+		pointer-events: none; // Disable interaction in editor preview.
+	}
+
+	&__editor-note {
+		margin-top: 1rem;
+		padding: 0.75rem 1rem;
+		background: #eff6ff;
+		border: 1px solid #bfdbfe;
+		border-radius: 6px;
+		font-size: 0.8rem;
+		color: #1e40af;
+		font-family: sans-serif;
+		text-align: center;
+	}
+}

@@ -1,0 +1,16 @@
+/* Maxstamp – Public Styles */
+
+.maxstamp-page-wrapper { padding: 20px 0 40px; }
+
+/* Plan cards */
+.maxstamp-plan-card { transition: box-shadow .2s, transform .1s; }
+.maxstamp-plan-card:hover { box-shadow: 0 4px 18px rgba(0,0,0,.15); transform: translateY(-2px); }
+
+/* Subscribe form */
+.maxstamp-subscribe-page .panel { border-radius: 6px; }
+
+/* Public list */
+.maxstamp-public-list h1 { margin-bottom: 5px; }
+
+/* Subscriber detail */
+.maxstamp-subscriber-detail .breadcrumb { background: transparent; padding: 0; margin-bottom: 15px; }

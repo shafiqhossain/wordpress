@@ -1,0 +1,25 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "smma/dashboard-stats",
+	"version": "1.0.0",
+	"title": "Dashboard Stats",
+	"category": "smma-blocks",
+	"icon": "chart-bar",
+	"description": "Displays Total Projects, Active Subscribers, and Total WooCommerce Products as a summary dashboard.",
+	"keywords": [ "dashboard", "stats", "projects", "subscribers", "products", "smma" ],
+	"attributes": {
+		"blockTitle": {
+			"type": "string",
+			"default": "Overview"
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ]
+	},
+	"textdomain": "smma-gutenberg-blocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

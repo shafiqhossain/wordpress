@@ -1,0 +1,91 @@
+/**
+ * Callback Action block — shared styles (front end + editor).
+ */
+
+.smma-callback-action {
+	background: linear-gradient( 135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100% );
+	border-radius: 12px;
+	overflow: hidden;
+	position: relative;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: -50%;
+		right: -10%;
+		width: 400px;
+		height: 400px;
+		background: radial-gradient(
+			circle,
+			rgba( 37, 99, 235, 0.2 ) 0%,
+			transparent 70%
+		);
+		pointer-events: none;
+	}
+
+	&__inner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 2rem;
+		padding: 3rem 2.5rem;
+		position: relative;
+		z-index: 1;
+
+		@media ( max-width: 768px ) {
+			flex-direction: column;
+			text-align: center;
+		}
+	}
+
+	&__content {
+		flex: 1;
+	}
+
+	&__title {
+		font-size: 2rem;
+		font-weight: 800;
+		color: #ffffff;
+		margin: 0 0 0.75rem;
+		line-height: 1.2;
+		letter-spacing: -0.02em;
+	}
+
+	&__description {
+		font-size: 1rem;
+		color: rgba( 255, 255, 255, 0.75 );
+		line-height: 1.7;
+		margin: 0;
+		max-width: 480px;
+	}
+
+	&__action {
+		flex-shrink: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	&__button {
+		display: inline-block;
+		background: linear-gradient( 135deg, #2563eb, #7c3aed );
+		color: #ffffff;
+		font-size: 1rem;
+		font-weight: 700;
+		padding: 0.875rem 2rem;
+		border-radius: 50px;
+		text-decoration: none;
+		letter-spacing: 0.02em;
+		white-space: nowrap;
+		cursor: pointer;
+		transition: opacity 0.2s ease, transform 0.2s ease;
+		box-shadow: 0 4px 20px rgba( 37, 99, 235, 0.4 );
+
+		&:hover {
+			opacity: 0.9;
+			transform: translateY( -1px );
+			color: #ffffff;
+		}
+	}
+}

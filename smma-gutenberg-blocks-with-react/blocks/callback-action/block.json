@@ -1,0 +1,37 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "smma/callback-action",
+	"version": "1.0.0",
+	"title": "Callback Action",
+	"category": "smma-blocks",
+	"icon": "phone",
+	"description": "A call-to-action block with an editable title, description, and callback button.",
+	"keywords": [ "cta", "callback", "action", "button", "smma" ],
+	"attributes": {
+		"title": {
+			"type": "string",
+			"default": "Ready to get started?"
+		},
+		"description": {
+			"type": "string",
+			"default": "Get in touch with us today and let us help you grow your business."
+		},
+		"buttonLabel": {
+			"type": "string",
+			"default": "Request a Callback"
+		},
+		"buttonUrl": {
+			"type": "string",
+			"default": "#"
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ]
+	},
+	"textdomain": "smma-gutenberg-blocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

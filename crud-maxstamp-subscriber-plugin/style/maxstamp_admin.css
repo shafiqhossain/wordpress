@@ -1,0 +1,52 @@
+/* Maxstamp Subscriber Plugin – Admin Styles */
+
+.maxstamp-admin h1.wp-heading-inline { margin-bottom: 0; }
+
+/* Danger button */
+.button.maxstamp-danger,
+a.button.maxstamp-danger {
+    color: #c9302c !important;
+    border-color: #c9302c !important;
+}
+.button.maxstamp-danger:hover {
+    background: #c9302c !important;
+    color: #fff !important;
+}
+
+/* KPI panels */
+.maxstamp-admin .panel { margin-bottom: 0; }
+
+/* View page layout */
+.maxstamp-view-wrap dl dt { font-weight: 600; margin-top: 8px; }
+.maxstamp-view-wrap dl dd { margin-left: 0; color: #555; }
+
+/* Bootstrap labels inside WP admin */
+.label { display: inline; padding: .2em .5em .3em; font-size: 75%;
+         font-weight: 700; line-height: 1; color: #fff; text-align: center;
+         white-space: nowrap; vertical-align: baseline; border-radius: .25em; }
+.label-default  { background-color: #777; }
+.label-primary  { background-color: #337ab7; }
+.label-success  { background-color: #5cb85c; }
+.label-info     { background-color: #5bc0de; }
+.label-warning  { background-color: #f0ad4e; color: #333; }
+.label-danger   { background-color: #d9534f; }
+
+/* Required asterisk */
+.required { color: #c9302c; }
+
+/* Form max-width */
+.maxstamp-form-wrap { max-width: 740px; }
+
+/* Postbox spacing */
+.maxstamp-admin .postbox { margin-top: 15px; }
+.maxstamp-admin .postbox .inside { padding: 12px 15px; }
+
+/* Bootstrap alert inside WP */
+.alert { padding: 10px 15px; margin: 10px 0 15px; border: 1px solid transparent; border-radius: 4px; }
+.alert-success { color: #3c763d; background-color: #dff0d8; border-color: #d6e9c6; }
+.alert-danger  { color: #a94442; background-color: #f2dede; border-color: #ebccd1; }
+.alert-warning { color: #8a6d3b; background-color: #fcf8e3; border-color: #faebcc; }
+.alert-info    { color: #31708f; background-color: #d9edf7; border-color: #bce8f1; }
+.alert .close  { float: right; font-size: 18px; font-weight: 700; line-height: 1;
+                  color: #000; opacity: .3; background: none; border: none; cursor: pointer; }
+.alert .close:hover { opacity: .6; }

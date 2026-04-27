@@ -1,0 +1,10 @@
+/**
+ * Dashboard Stats block — editor-only styles.
+ */
+
+.smma-dashboard-stats {
+	// The heading uses RichText in the editor, keep it consistent.
+	.rich-text:focus {
+		outline: none;
+	}
+}

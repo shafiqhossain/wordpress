@@ -1,0 +1,35 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "smma/testimonial",
+	"version": "1.0.0",
+	"title": "Testimonials",
+	"category": "smma-blocks",
+	"icon": "format-quote",
+	"description": "Display customer testimonials with quote, person image, name, designation, and company.",
+	"keywords": [ "testimonials", "reviews", "quote", "clients", "smma" ],
+	"attributes": {
+		"testimonials": {
+			"type": "array",
+			"default": [
+				{
+					"id": "t1",
+					"quote": "Working with this team transformed our digital presence. Highly recommended!",
+					"imageUrl": "",
+					"imageAlt": "",
+					"personName": "Jane Smith",
+					"designation": "Marketing Director",
+					"company": "Acme Corp"
+				}
+			]
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ]
+	},
+	"textdomain": "smma-gutenberg-blocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

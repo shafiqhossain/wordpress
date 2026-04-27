@@ -1,0 +1,32 @@
+{
+	"name": "smma-gutenberg-blocks",
+	"version": "1.1.0",
+	"private": true,
+	"description": "Custom Gutenberg blocks for SMMA",
+	"author": "Shafiq Hossain",
+	"license": "GPL-2.0-or-later",
+	"keywords": [
+		"WordPress",
+		"Gutenberg",
+		"blocks",
+		"SMMA",
+		"editor"
+	],
+	"homepage": "https://www.isoftbd.com",
+	"repository": "git+https://www.isoftbd.com",
+	"bugs": {
+		"url": "https://www.isoftbd.com"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^26.0.0"
+	},
+	"prettier": "@wordpress/prettier-config",
+	"scripts": {
+		"start": "wp-scripts start --webpack-copy-php --webpack-src-dir=blocks --output-path=build",
+		"build": "wp-scripts build --webpack-copy-php --webpack-src-dir=blocks --output-path=build",
+		"lint:js": "wp-scripts lint-js",
+		"lint:style": "wp-scripts lint-style",
+		"format:js": "wp-scripts format",
+		"packages-update": "wp-scripts packages-update"
+	}
+}

@@ -1,0 +1,111 @@
+/**
+ * Testimonials block — shared styles (front end + editor).
+ */
+
+.smma-testimonial {
+	padding: 2rem 0;
+
+	&__heading {
+		text-align: center;
+		font-size: 2rem;
+		font-weight: 800;
+		color: #1a1a2e;
+		margin-bottom: 2.5rem;
+		letter-spacing: -0.02em;
+	}
+
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat( auto-fill, minmax( 300px, 1fr ) );
+		gap: 1.5rem;
+	}
+
+	&__card {
+		background: #ffffff;
+		border: 1px solid #e8e8f0;
+		border-radius: 12px;
+		padding: 2rem;
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+		position: relative;
+		transition: box-shadow 0.2s ease;
+
+		&::before {
+			content: '\201C';
+			position: absolute;
+			top: 1rem;
+			right: 1.5rem;
+			font-size: 4rem;
+			line-height: 1;
+			color: #e8e8f0;
+			font-family: 'Georgia', serif;
+		}
+
+		&:hover {
+			box-shadow: 0 8px 32px rgba( 0, 0, 0, 0.08 );
+		}
+	}
+
+	&__quote {
+		font-size: 0.95rem;
+		line-height: 1.7;
+		color: #374151;
+		margin: 0;
+		font-style: italic;
+		quotes: none;
+	}
+
+	&__person {
+		display: flex;
+		align-items: center;
+		gap: 0.875rem;
+		margin-top: auto;
+	}
+
+	&__avatar {
+		width: 48px;
+		height: 48px;
+		border-radius: 50%;
+		object-fit: cover;
+		flex-shrink: 0;
+		border: 2px solid #e8e8f0;
+	}
+
+	&__avatar-placeholder {
+		width: 48px;
+		height: 48px;
+		border-radius: 50%;
+		background: linear-gradient( 135deg, #2563eb, #7c3aed );
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #fff;
+		font-weight: 700;
+		font-size: 1.2rem;
+		flex-shrink: 0;
+
+		&--small {
+			width: 48px;
+			height: 48px;
+			font-size: 1.1rem;
+		}
+	}
+
+	&__meta {
+		display: flex;
+		flex-direction: column;
+		gap: 0.15rem;
+	}
+
+	&__name {
+		font-size: 0.9rem;
+		font-weight: 700;
+		color: #1a1a2e;
+	}
+
+	&__role {
+		font-size: 0.8rem;
+		color: #6b7280;
+	}
+}

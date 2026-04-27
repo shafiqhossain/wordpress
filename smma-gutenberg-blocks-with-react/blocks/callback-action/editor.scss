@@ -1,0 +1,21 @@
+/**
+ * Callback Action block — editor-only styles.
+ */
+
+.smma-callback-action {
+	&__button {
+		// In the editor the button is a span (RichText), not an anchor.
+		display: inline-block;
+	}
+
+	&__url-preview {
+		font-size: 0.75rem;
+		color: rgba( 255, 255, 255, 0.5 );
+		margin: 0.25rem 0 0;
+		font-family: monospace;
+
+		code {
+			color: rgba( 255, 255, 255, 0.7 );
+		}
+	}
+}

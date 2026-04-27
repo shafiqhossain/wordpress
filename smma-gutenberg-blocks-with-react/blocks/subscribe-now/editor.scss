@@ -1,0 +1,18 @@
+/**
+ * Subscribe Now block — editor-only styles.
+ */
+
+.smma-subscribe-now {
+	&__button {
+		// In the editor, button is a span — ensure it displays correctly.
+		display: inline-block;
+	}
+
+	&__url-preview {
+		font-size: 0.72rem;
+		color: #9ca3af;
+		font-family: monospace;
+		margin: 0;
+		word-break: break-all;
+	}
+}

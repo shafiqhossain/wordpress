@@ -1,0 +1,37 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "smma/newsletter-subscription",
+	"version": "1.0.0",
+	"title": "Newsletter Subscription",
+	"category": "smma-blocks",
+	"icon": "email-alt",
+	"description": "A newsletter sign-up form that collects first name, last name and email and stores them in the database.",
+	"keywords": [ "newsletter", "subscription", "email", "signup", "smma" ],
+	"attributes": {
+		"blockTitle": {
+			"type": "string",
+			"default": "Subscribe to Our Newsletter"
+		},
+		"subheading": {
+			"type": "string",
+			"default": "Stay updated with the latest news, tips, and exclusive offers."
+		},
+		"buttonLabel": {
+			"type": "string",
+			"default": "Subscribe Now"
+		},
+		"successMessage": {
+			"type": "string",
+			"default": "Thank you for subscribing!"
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ]
+	},
+	"textdomain": "smma-gutenberg-blocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

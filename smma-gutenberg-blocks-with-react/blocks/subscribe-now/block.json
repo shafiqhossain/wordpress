@@ -1,0 +1,54 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "smma/subscribe-now",
+	"version": "1.0.0",
+	"title": "Subscribe Now",
+	"category": "smma-blocks",
+	"icon": "star-filled",
+	"description": "A subscription pricing block with Free, Business (highlighted), and Corporate tiers.",
+	"keywords": [ "subscribe", "pricing", "plans", "membership", "smma" ],
+	"attributes": {
+		"blockTitle": {
+			"type": "string",
+			"default": "Choose Your Plan"
+		},
+		"plans": {
+			"type": "array",
+			"default": [
+				{
+					"id": "free",
+					"name": "Free",
+					"description": "Perfect for individuals just getting started. Access basic features with no commitment.",
+					"buttonLabel": "Get Started Free",
+					"redirectUrl": "/subscribe/free",
+					"highlighted": false
+				},
+				{
+					"id": "business",
+					"name": "Business",
+					"description": "Ideal for growing teams. Unlock advanced tools, priority support, and more integrations.",
+					"buttonLabel": "Select Business",
+					"redirectUrl": "/subscribe/business",
+					"highlighted": true
+				},
+				{
+					"id": "corporate",
+					"name": "Corporate",
+					"description": "Full-scale solution for enterprises. Custom onboarding, dedicated account manager, SLA.",
+					"buttonLabel": "Contact Sales",
+					"redirectUrl": "/subscribe/corporate",
+					"highlighted": false
+				}
+			]
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ]
+	},
+	"textdomain": "smma-gutenberg-blocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}
