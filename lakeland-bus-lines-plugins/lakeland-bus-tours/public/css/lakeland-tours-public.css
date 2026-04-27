@@ -1,0 +1,240 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+
+
+.tour-row, .tour-row-head {
+  border-bottom: 1px solid #ccc;
+  display: table;
+  padding: 5px 2%;
+  width: 100%;
+}
+
+
+.tour-title, .tour-day, .tour-date, .tour-status {
+  float: left;
+  width: 50%;
+}
+.tour-day {
+  width: 10%;
+}
+.tour-date, .tour-status {
+  width: 20%;
+}
+
+.tour-month {
+  font-weight: 600;
+}
+
+.tour-list-container {
+  border: 1px solid #ccc;
+  position: relative;
+}
+
+.tour-heading {
+  font-size: 29px;
+  font-weight: 600;
+}
+.tour-heading small {
+  display: block;
+  font-size: 15px;
+}
+
+.tour-row:nth-child(2n+1) {
+  background: #fefefe none repeat scroll 0 0;
+}
+.tour-row-head {
+  background: transparent;
+}
+
+.tour-detail-row {
+    border-bottom: 1px solid #eee;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+    display: table;
+    width: 100%;
+}
+
+.tour-detail-row.first .tour-detail-col-50pr {
+  border-top: 1px solid #ccc;
+}
+
+.tour-detail-col-50pr {
+  float: left;
+  width: 50%;
+}
+
+.tour-detail-col-75pr { 
+  border-right: 1px solid #ccc; 
+  float: left;
+  padding: 5px;
+  width: 75%;
+}
+
+.tour-detail-col-50pr.border-tl {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  border-color: #ccc;
+  border-image: none;
+  border-style: solid;
+  border-width: 1px 1px 0;
+  font-weight: 600;
+  padding: 5px;
+}
+
+.tour-detail-head {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  border-color: #ccc;
+  border-image: none;
+  border-style: solid;
+  border-width: 1px 1px 0;
+  font-size: 25px;
+  font-weight: 600;
+  padding: 5px;
+}
+
+
+.tour-trip-detail-row {
+  border: 1px solid #ccc;
+  display: table;
+  width: 100%;
+}
+
+.tour-trip-col-25pr {
+  float: left;
+  font-weight: 600;
+  padding: 5px;
+  width: 25%;
+}
+
+
+.tour-trip-col-75pr {
+  border-left: 1px solid #ccc;
+  float: left;
+  padding: 5px;
+width: 75%;
+}
+.tour-trip-detail {
+  font-weight: 600;
+}
+
+.tour-detail-col-100pr {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  border-color: #ccc #ccc -moz-use-text-color;
+  border-image: none;
+  border-style: solid solid none;
+  border-width: 1px 1px 0;
+  padding: 5px;
+}
+
+.tour-detail-col-100pr.no-border {
+  border: 0 solid #ccc;
+}
+
+.tour-detail-col-100pr.trip-header {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+h1.trip-d-header {
+  line-height: 65px;
+  font-size: 35px !important;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+h2.trip-d-header  {
+  margin-bottom: 20px;
+}
+
+.tour-detail-col-25pr { 
+  
+  float: left;
+  padding: 5px;
+  width: 25%;
+}
+
+.tour-detail-col-25pr {
+  float: left;
+  width: 25%;
+}
+
+.tour-img {
+  border: 1px solid #ccc; 
+  margin: 5px;
+  max-width: 100%;
+  text-align: center;
+}
+
+.tour-img-container {
+  display: table;
+  width: 100%;
+}
+.tour-img img {
+  max-width: 100%;
+  margin:0 auto;
+}
+.tour-img:first-child {
+  margin-left: 0;
+}
+
+.loader-txt {
+  font-size: 25px;
+  font-weight: 600;
+  position: relative;
+  top: 50%;
+}
+
+.loader {
+  background: rgba(200, 200, 200, 0.5) none repeat scroll 0 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.display-none {
+  display: none;
+}
+@media (max-width: 767px) {
+  .tour-title, .tour-day, .tour-date  {
+    width: 100%;
+  }
+	.board-img img {
+	  height: auto;
+	  max-width: 100%;
+	}
+
+	.wgtm-col-sm-1, .wgtm-col-sm-2, .wgtm-col-sm-3,  .wgtm-col-sm-4,  .wgtm-col-sm-5,  .wgtm-col-sm-6,  .wgtm-col-sm-7,  .wgtm-col-sm-8,  .wgtm-col-sm-9,  .wgtm-col-sm-10,  .wgtm-col-sm-11,  .wgtm-col-sm-12 {
+		float: none;
+		margin: 0 auto;
+	}
+
+
+}
+
+@media (max-width: 500px){
+	h1.trip-d-header { 
+	  font-size: 30px !important; 
+	}
+  .tour-detail-col-75pr, .tour-detail-col-25pr, .tour-trip-col-75pr, .tour-trip-col-25pr {
+     
+    width: 100%;
+  }
+  .tour-detail-col-75pr {
+    border: 0px;
+  }
+}

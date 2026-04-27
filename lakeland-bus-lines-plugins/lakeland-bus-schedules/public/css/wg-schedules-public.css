@@ -1,0 +1,165 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+
+.zone-col-50pr {
+  float: left;
+  width: 50%;
+}
+.display-none {
+  display: none;
+}
+
+.route-name, .zone-info {
+  float: left;
+  width: 50%;
+}
+
+.zone-row {
+  width: 100%;
+  clear: both;
+}
+.route-row {
+  display: table;
+  width: 100%;
+}
+
+.day-row-head, .zone-row {
+  border-bottom: 1px solid #ccc;
+  font-size: 25px;
+  font-weight: 600;
+  padding: 5px;
+  text-align: center;
+  background: #FaFaFa;
+}
+.zone-row {
+  font-size: 20px;
+  background: #F7F7F7;
+}
+
+.day-row-head {
+  border-top: 1px solid #ccc;
+  margin-top: 15px;
+}
+
+.zone-cols {
+  padding: 5px;
+}
+
+.zone-row-1 {
+  border-right: 3px solid #fff;
+  display: table;
+  width: 100%;
+}
+.zone-row-1:nth-child(2n+1) {
+  background: #f1f5f8 none repeat scroll 0 0;
+}
+.loader-txt {
+  font-size: 25px;
+  font-weight: 600;
+  position: relative;
+  top: 50%;
+}
+
+.loader {
+  background: rgba(200, 200, 200, 0.5) none repeat scroll 0 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.display-none {
+  display: none;
+}
+
+.s-name {
+  background: #eee none repeat scroll 0 0;
+  border-bottom: 1px solid #fff;
+  padding: 5px;
+}
+
+.stop-schedule {
+  border-bottom: 1px solid #ccc;
+}
+
+.s-time {
+  padding: 4px;
+  text-align: center;
+}
+ 
+h1.schedule-detail-head {
+  font-size: 30px;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+h2.schedule-detail-head {
+  font-size: 25px;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.pm {
+  background: #f4efef none repeat scroll 0 0;
+  border-radius: 3px;
+}
+h3.schedule-detail-head {
+  font-size: 20px;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.stop-schedule.active {
+  background: rgba(230, 230, 230, 0.2) none repeat scroll 0 0;
+  box-shadow: 1px 0 3px 3px #ccc;
+  opacity: 1;
+  z-index: 9999 !important;
+}
+
+.stop-schedule.deactive {
+  opacity: 0.2;
+}
+
+.stop-label-schedule-template {
+  display: none;
+}
+.display-none {
+  display: none;
+}
+.lakeland-col-name  {
+  white-space: nowrap;
+}
+@media (max-width: 767px) {
+  .zone-col-50pr   {
+    width: 100%;
+  }
+	.board-img img {
+	  height: auto;
+	  max-width: 100%;
+	}
+
+	.wgtm-col-sm-1, .wgtm-col-sm-2, .wgtm-col-sm-3,  .wgtm-col-sm-4,  .wgtm-col-sm-5,  .wgtm-col-sm-6,  .wgtm-col-sm-7,  .wgtm-col-sm-8,  .wgtm-col-sm-9,  .wgtm-col-sm-10,  .wgtm-col-sm-11,  .wgtm-col-sm-12 {
+		float: none;
+		margin: 0 auto;
+	}
+
+
+}
+
+@media (max-width: 350px){
+  .tour-detail-col-75pr, .tour-detail-col-25pr, .tour-trip-col-75pr, .tour-trip-col-25pr {
+    border: 1px solid #ccc;
+    width: 100%;
+  }
+}

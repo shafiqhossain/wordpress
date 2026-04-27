@@ -1,0 +1,45 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+
+ 
+.remove-stop-schedule {
+  background: #fcc none repeat scroll 0 0;
+  border-radius: 15px;
+  bottom: 23%;
+  box-shadow: 2px 2px #999;
+  cursor: pointer;
+  display: inline-block;
+  padding: 2px 8px;
+  position: absolute;
+  left: 2px;
+
+}
+ 
+.add-stop-schedule {
+  background: #fff none repeat scroll 0 0;
+  border: 1px solid #ccc;
+  border-radius: 14px;
+  box-shadow: 2px 3px #ccc;
+  color: #444;
+  display: inline-block;
+  margin-top: 0px; 
+  padding: 5px 10px;
+  text-decoration: none;
+}
+.stop-schedule {
+  position: relative;
+}
+ 
+td.first select {
+  margin-left: 200px !important;
+}
+
+.lakeland-col-name  { 
+  background: #fff;
+}
+
+.display-none {
+  display: none;
+}
